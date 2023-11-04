@@ -2,7 +2,11 @@
   "name": "@i-element/button",
   "version": "0.0.0",
   "description": "",
-  "keywords": ["vue", "ui", "component library"],
+  "keywords": [
+    "vue",
+    "ui",
+    "component library"
+  ],
   "author": "irises",
   "license": "MIT",
   "homepage": "",
@@ -14,16 +18,15 @@
     "url": ""
   },
   "scripts": {
-    "build": "echo build",
+    "build": "vite build",
     "test": "echo test"
   },
-  "main": "",
-  "module": "",
-  "types": "",
+  "main": "./dist/i-element-button.umd.js",
+  "module": "./dist/i-element-button.mjs",
   "exports": {
     ".": {
-      "require": "",
-      "module": "",
+      "require": "./dist/i-element-button.umd.js",
+      "module": "./dist/i-element-button.mjs",
       "types": ""
     }
   },
@@ -35,6 +38,7 @@
   "peerDependencies": {
     "vue": ">=3.0.0"
   },
-  "dependencies": {},
-  "devDependencies": {}
+  "dependencies": {
+    "@i-element/shared": "workspace:^"
+  }
 }

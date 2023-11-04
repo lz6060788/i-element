@@ -2,7 +2,17 @@
   "name": "i-element",
   "private": true,
   "scripts": {
-    "hellow": "echo 'hellow world'"
+    "hellow": "echo 'hellow world'",
+    "dev:demo": "pnpm --filter @i-element/demo run dev",
+    "build:ui": "pnpm --filter @i-element/ui run build"
   },
-  "devDependencies": {}
+  "devDependencies": {
+    "@vitejs/plugin-vue": "^4.4.0",
+    "sass": "^1.69.5",
+    "typescript": "^5.2.2",
+    "vite": "^4.5.0"
+  },
+  "dependencies": {
+    "vue": "^3.3.7"
+  }
 }

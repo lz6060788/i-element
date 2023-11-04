@@ -23,11 +23,12 @@
   },
   "main": "./dist/i-element-input.umd.js",
   "module": "./dist/i-element-input.mjs",
+  "types": "./dist/index.d.ts",
   "exports": {
     ".": {
       "require": "./dist/i-element-input.umd.js",
       "module": "./dist/i-element-input.mjs",
-      "types": ""
+      "types": "./dist/index.d.ts"
     }
   },
   "files": [

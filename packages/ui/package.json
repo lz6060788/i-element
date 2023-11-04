@@ -23,11 +23,12 @@
   },
   "main": "./dist/i-element-ui.umd.js",
   "module": "./dist/i-element-ui.mjs",
+  "types": "./dist/index.d.ts",
   "exports": {
     ".": {
       "require": "./dist/i-element-ui.umd.js",
       "module": "./dist/i-element-ui.mjs",
-      "types": ""
+      "types": "./dist/index.d.ts"
     }
   },
   "files": [

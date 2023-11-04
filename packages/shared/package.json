@@ -5,10 +5,12 @@
   },
   "main": "./dist/i-element-shared.umd.js",
   "module": "./dist/i-element-shared.mjs",
+  "types": "./dist/index.d.ts",
   "exports": {
     ".": {
       "require": "./dist/i-element-shared.umd.js",
-      "module": "./dist/i-element-shared.mjs"
+      "module": "./dist/i-element-shared.mjs",
+      "types": "./dist/index.d.ts"
     }
   },
   "dependencies": {

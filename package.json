@@ -1,0 +1,8 @@
+{
+  "name": "i-element",
+  "private": true,
+  "scripts": {
+    "hellow": "echo 'hellow world'"
+  },
+  "devDependencies": {}
+}

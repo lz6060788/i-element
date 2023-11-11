@@ -9,13 +9,13 @@
   ],
   "author": "irises",
   "license": "MIT",
-  "homepage": "",
+  "homepage": "https://gitee.com/theirises/i-element",
   "repository": {
     "type": "git",
-    "url": ""
+    "url": "https://gitee.com/theirises/i-element"
   },
   "bugs": {
-    "url": ""
+    "url": "https://gitee.com/theirises/i-element/issues"
   },
   "scripts": {
     "build": "vite build",

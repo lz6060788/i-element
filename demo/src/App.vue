@@ -2,8 +2,8 @@
 // demo/src/App.vue
 import {
   Button,
-  Input
-} from '@i-element/ui'
+  Input,
+} from '@i-element/ui';
 </script>
 
 <template>

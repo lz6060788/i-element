@@ -1,20 +1,3 @@
-import { defineConfig } from 'vite';
-import vue from '@vitejs/plugin-vue';
+import { generateVueConfig } from '../build/build.config';
 
-export default defineConfig({
-  plugins: [vue()],
-  build: {
-    lib: {
-      entry: './src/index.ts',
-      name: 'iElementInput',
-      fileName: 'i-element-input',
-    },
-    minify: false,
-    rollupOptions: {
-      external: [
-        /@i-element.*/,
-        'vue',
-      ],
-    },
-  },
-});
+export default generateVueConfig();

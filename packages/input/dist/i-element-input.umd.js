@@ -12,7 +12,7 @@
     setup(__props, { emit: __emit }) {
       const emit = __emit;
       function inputHandler(e) {
-        const value = e.target.value;
+        const { value } = e.target;
         emit("update:modelValue", value);
         shared.hello(value);
       }

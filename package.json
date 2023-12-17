@@ -9,9 +9,8 @@
     "clean:type": "rimraf ./dist",
     "type:node": "tsc -p tsconfig.node.json --noEmit --composite false",
     "type:src": "pnpm run clean:type && vue-tsc -p tsconfig.src.json --composite false --declaration --emitDeclarationOnly",
-    "mv-type": "tsx ./scripts/dts-mv.ts",
     "dev:demo": "pnpm --filter @i-element/demo run dev",
-    "build:ui": "pnpm run type:src && pnpm --filter ./packages/** run build && pnpm run mv-type"
+    "build:ui": "pnpm run type:src && pnpm --filter ./packages/** run build"
   },
   "devDependencies": {
     "@commitlint/cli": "^18.4.0",

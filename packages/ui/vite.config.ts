@@ -1,21 +1,5 @@
-// packages/shared/vite.config.ts
+// packages/ui/vite.config.ts
 import { defineConfig } from 'vite';
+import { generateVueConfig } from '../build/build.config';
 
-export default defineConfig({
-  build: {
-    lib: {
-      entry: './src/index.ts',
-      name: 'iElementUi',
-      fileName: 'i-element-ui',
-    },
-    minify: false,
-    rollupOptions: {
-      external: [
-        /lodash.*/,
-        /@i-element.*/,
-      ],
-      output: {
-      },
-    },
-  },
-});
+export default defineConfig(({ mode }) => generateVueConfig({ mode }));

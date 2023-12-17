@@ -22,6 +22,7 @@
       };
     }
   });
+  const button_vue_vue_type_style_index_0_lang = "";
   exports2.Button = _sfc_main;
   Object.defineProperty(exports2, Symbol.toStringTag, { value: "Module" });
 });

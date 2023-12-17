@@ -20,6 +20,7 @@ const _sfc_main = /* @__PURE__ */ defineComponent({
     };
   }
 });
+const button_vue_vue_type_style_index_0_lang = "";
 export {
   _sfc_main as Button
 };

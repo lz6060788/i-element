@@ -49,6 +49,9 @@ module.exports = defineConfig({
   rules: {
     'import/no-extraneous-dependencies': 'off',
     'import/prefer-default-export': 'off',
+    'no-await-in-loop': 'off',
+    '@typescript-eslint/no-use-before-define': 'off',
+    'max-len': 'off',
 
     // vue 允许单单词组件名
     'vue/multi-word-component-names': 'off',

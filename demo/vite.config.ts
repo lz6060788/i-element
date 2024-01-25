@@ -2,9 +2,10 @@
 import { defineConfig } from 'vite';
 import { join } from 'node:path';
 import vue from '@vitejs/plugin-vue';
+import unocss from 'unocss/vite';
 
 export default defineConfig({
-  plugins: [vue()],
+  plugins: [vue(), unocss()],
   resolve: {
     /**
      * resolve.alias 可以将所有 import 语句中的 @openxui/xxx 替换为 ../packages/xxx/src，从而命中源码而非产物，

@@ -1,13 +1,8 @@
-declare const _default: __VLS_WithTemplateSlots<import("vue").DefineComponent<__VLS_WithDefaults<__VLS_TypePropsToRuntimeProps<{
-    text?: string | undefined;
-}>, {
-    text: string;
-}>, {}, unknown, {}, {}, import("vue").ComponentOptionsMixin, import("vue").ComponentOptionsMixin, {}, string, import("vue").VNodeProps & import("vue").AllowedComponentProps & import("vue").ComponentCustomProps, Readonly<import("vue").ExtractPropTypes<__VLS_WithDefaults<__VLS_TypePropsToRuntimeProps<{
-    text?: string | undefined;
-}>, {
-    text: string;
-}>>>, {
-    text: string;
+import { ButtonProps } from './button';
+declare const _default: __VLS_WithTemplateSlots<import("vue").DefineComponent<__VLS_WithDefaults<__VLS_TypePropsToRuntimeProps<ButtonProps>, Required<import("../../shared/src").InferVueDefaults<ButtonProps>>>, {}, unknown, {}, {}, import("vue").ComponentOptionsMixin, import("vue").ComponentOptionsMixin, {}, string, import("vue").VNodeProps & import("vue").AllowedComponentProps & import("vue").ComponentCustomProps, Readonly<import("vue").ExtractPropTypes<__VLS_WithDefaults<__VLS_TypePropsToRuntimeProps<ButtonProps>, Required<import("../../shared/src").InferVueDefaults<ButtonProps>>>>>, {
+    type: "" | "primary" | "success" | "info" | "warning" | "danger";
+    plain: boolean;
+    disabled: boolean;
 }, {}>, {
     default?(_: {}): any;
 }>;

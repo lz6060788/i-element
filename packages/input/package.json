@@ -29,7 +29,9 @@
       "require": "./dist/i-element-input.umd.js",
       "import": "./dist/i-element-input.mjs",
       "types": "./dist/src/index.d.ts"
-    }
+    },
+    "./*": "./*",
+    "./style.css": "./dist/style.css"
   },
   "files": [
     "dist",

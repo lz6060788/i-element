@@ -1,6 +1,3 @@
-// 模块出口，主题方法实现，整合构建配置
-
-// packages/build/src/generateConfig/index.ts
 import { mergeConfig, UserConfig } from 'vite';
 import { PackageJson } from 'type-fest';
 import { readJsonFile, absCwd } from '../utils';

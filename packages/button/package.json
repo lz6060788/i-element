@@ -29,7 +29,9 @@
       "require": "./dist/i-element-button.umd.js",
       "import": "./dist/i-element-button.mjs",
       "types": "./dist/src/index.d.ts"
-    }
+    },
+    "./*": "./*",
+    "./style.css": "./dist/style.css"
   },
   "files": [
     "dist",

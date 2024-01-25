@@ -59,6 +59,7 @@
       fileName: "",
       mode: "package",
       dts: "",
+      exports: ".",
       onSetPkg: () => {
       },
       pluginVue: false,
@@ -136,13 +137,14 @@
     );
   }
   function pluginSetPackageJson(packageJson = {}, options = {}) {
+    const finalOptions = getOptions(options);
     const {
       onSetPkg,
       mode,
       fileName,
       outDir,
-      dts
-    } = getOptions(options);
+      exports: exports3
+    } = finalOptions;
     if (mode !== "package") {
       return null;
     }
@@ -158,25 +160,33 @@
           absCwd(outDir, getOutFileName(finalName, "umd", mode)),
           false
         );
-        packageJsonObj.main = umd;
         exportsData.require = umd;
+        if (exports3 === ".") {
+          packageJsonObj.main = umd;
+        }
         const es = relCwd(
           absCwd(outDir, getOutFileName(finalName, "es", mode)),
           false
         );
-        packageJsonObj.module = es;
         exportsData.import = es;
-        if (dts) {
-          const dtsEntry = getDtsPath(options);
+        if (exports3 === ".") {
+          packageJsonObj.module = es;
+        }
+        const dtsEntry = getDtsPath(options);
+        exportsData.types = dtsEntry;
+        if (exports3 === ".") {
           packageJsonObj.types = dtsEntry;
-          exportsData.types = dtsEntry;
         }
         if (!isObjectLike(packageJsonObj.exports)) {
           packageJsonObj.exports = {};
         }
-        Object.assign(packageJsonObj.exports, { ".": exportsData });
+        Object.assign(packageJsonObj.exports, {
+          [exports3]: exportsData,
+          // 默认暴露的出口
+          "./*": "./*"
+        });
         if (isFunction(onSetPkg)) {
-          await onSetPkg(packageJsonObj);
+          await onSetPkg(packageJsonObj, finalOptions);
         }
         await writeJsonFile(absCwd("package.json"), packageJsonObj, null, 2);
       }
@@ -286,6 +296,8 @@
     };
     return vite.mergeConfig(result, viteConfig || {});
   }
+  exports2.absCwd = absCwd;
+  exports2.camelCase = camelCase;
   exports2.defaultOptions = defaultOptions;
   exports2.generateConfig = generateConfig;
   exports2.getExternal = getExternal;
@@ -295,8 +307,16 @@
   exports2.getPlugins = getPlugins;
   exports2.getPresetPlugin = getPresetPlugin;
   exports2.getPresetPlugins = getPresetPlugins;
+  exports2.isFunction = isFunction;
+  exports2.isObjectLike = isObjectLike;
+  exports2.kebabCase = kebabCase;
   exports2.pluginMoveDts = pluginMoveDts;
   exports2.pluginSetPackageJson = pluginSetPackageJson;
+  exports2.readJsonFile = readJsonFile;
+  exports2.relCwd = relCwd;
   exports2.resolveEntry = resolveEntry;
+  exports2.usePathAbs = usePathAbs;
+  exports2.usePathRel = usePathRel;
+  exports2.writeJsonFile = writeJsonFile;
   Object.defineProperty(exports2, Symbol.toStringTag, { value: "Module" });
 });

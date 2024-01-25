@@ -32,7 +32,9 @@
       "require": "./dist/i-element-ui.umd.js",
       "import": "./dist/i-element-ui.mjs",
       "types": "./dist/src/index.d.ts"
-    }
+    },
+    "./*": "./*",
+    "./style/*": "./dist/style/*"
   },
   "files": [
     "dist",
@@ -44,7 +46,9 @@
   },
   "dependencies": {
     "@i-element/button": "workspace:^",
+    "@i-element/config-provider": "workspace:^",
     "@i-element/input": "workspace:^",
-    "@i-element/shared": "workspace:^"
+    "@i-element/shared": "workspace:^",
+    "@i-element/styles": "workspace:^"
   }
 }

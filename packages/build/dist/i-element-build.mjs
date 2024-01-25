@@ -64,6 +64,7 @@ function defaultOptions() {
     fileName: "",
     mode: "package",
     dts: "",
+    exports: ".",
     onSetPkg: () => {
     },
     pluginVue: false,
@@ -141,13 +142,14 @@ function getDtsPath(options = {}) {
   );
 }
 function pluginSetPackageJson(packageJson = {}, options = {}) {
+  const finalOptions = getOptions(options);
   const {
     onSetPkg,
     mode,
     fileName,
     outDir,
-    dts
-  } = getOptions(options);
+    exports
+  } = finalOptions;
   if (mode !== "package") {
     return null;
   }
@@ -163,25 +165,33 @@ function pluginSetPackageJson(packageJson = {}, options = {}) {
         absCwd(outDir, getOutFileName(finalName, "umd", mode)),
         false
       );
-      packageJsonObj.main = umd;
       exportsData.require = umd;
+      if (exports === ".") {
+        packageJsonObj.main = umd;
+      }
       const es = relCwd(
         absCwd(outDir, getOutFileName(finalName, "es", mode)),
         false
       );
-      packageJsonObj.module = es;
       exportsData.import = es;
-      if (dts) {
-        const dtsEntry = getDtsPath(options);
+      if (exports === ".") {
+        packageJsonObj.module = es;
+      }
+      const dtsEntry = getDtsPath(options);
+      exportsData.types = dtsEntry;
+      if (exports === ".") {
         packageJsonObj.types = dtsEntry;
-        exportsData.types = dtsEntry;
       }
       if (!isObjectLike(packageJsonObj.exports)) {
         packageJsonObj.exports = {};
       }
-      Object.assign(packageJsonObj.exports, { ".": exportsData });
+      Object.assign(packageJsonObj.exports, {
+        [exports]: exportsData,
+        // 默认暴露的出口
+        "./*": "./*"
+      });
       if (isFunction(onSetPkg)) {
-        await onSetPkg(packageJsonObj);
+        await onSetPkg(packageJsonObj, finalOptions);
       }
       await writeJsonFile(absCwd("package.json"), packageJsonObj, null, 2);
     }
@@ -292,6 +302,8 @@ async function generateConfig(customOptions, viteConfig) {
   return mergeConfig(result, viteConfig || {});
 }
 export {
+  absCwd,
+  camelCase,
   defaultOptions,
   generateConfig,
   getExternal,
@@ -301,7 +313,15 @@ export {
   getPlugins,
   getPresetPlugin,
   getPresetPlugins,
+  isFunction,
+  isObjectLike,
+  kebabCase,
   pluginMoveDts,
   pluginSetPackageJson,
-  resolveEntry
+  readJsonFile,
+  relCwd,
+  resolveEntry,
+  usePathAbs,
+  usePathRel,
+  writeJsonFile
 };

@@ -30,7 +30,7 @@
     "vue": ">=3.0.0"
   },
   "dependencies": {
-    "@i-element/build": "workspace:^"
+    "@i-element/shared": "workspace:^"
   },
   "exports": {
     "./preset": {

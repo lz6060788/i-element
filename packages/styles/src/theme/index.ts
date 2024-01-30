@@ -8,7 +8,7 @@
  */
 
 import { inject, App, Plugin } from 'vue';
-import { isObjectLike } from '@i-element/build';
+import { isObjectLike } from '@i-element/shared';
 import { generateCssVars } from '../utils';
 import { themeColorLevelsEnabledKeys, IElementCssVarsConfig } from '../vars';
 
@@ -38,10 +38,10 @@ function useGlobalTheme(app: App, options?: IElementCssVarsConfig) {
   return result;
 }
 
-type OpenxUITheme = ReturnType<typeof useGlobalTheme>;
+type IElementTheme = ReturnType<typeof useGlobalTheme>;
 
 export function useTheme() {
-  const result = inject<OpenxUITheme>(THEME_PROVIDE_KEY);
+  const result = inject<IElementTheme>(THEME_PROVIDE_KEY);
   if (!result) {
     throw new Error('useTheme() must be used after app.use(Theme)!');
   }

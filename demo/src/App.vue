@@ -1,42 +1,42 @@
 <script setup lang="ts">
-// import { ref, reactive } from 'vue';
+import { ref, reactive } from 'vue';
 import {
-// Button,
-// Input,
-// ConfigProvider,
-// useTheme,
-// tinyThemeVars,
-// themeVars,
-// IElementCssVarsConfig,
+  Button,
+  Input,
+  ConfigProvider,
+  useTheme,
+  tinyThemeVars,
+  themeVars,
+  IElementCssVarsConfig,
 } from '@i-element/ui';
 
-// const { setTheme } = useTheme();
+const { setTheme } = useTheme();
 
-// const currentGlobalTheme = ref<'default' | 'tiny'>('default');
+const currentGlobalTheme = ref<'default' | 'tiny'>('default');
 
 // 全局主题切换
-// function switchGlobalTheme() {
-//   if (currentGlobalTheme.value === 'tiny') {
-//     currentGlobalTheme.value = 'default';
-//     setTheme(themeVars);
-//   } else {
-//     currentGlobalTheme.value = 'tiny';
-//     setTheme(tinyThemeVars);
-//   }
-// }
+function switchGlobalTheme() {
+  if (currentGlobalTheme.value === 'tiny') {
+    currentGlobalTheme.value = 'default';
+    setTheme(themeVars);
+  } else {
+    currentGlobalTheme.value = 'tiny';
+    setTheme(tinyThemeVars);
+  }
+}
 
-// const currentSecondLineTheme = ref<'default' | 'tiny'>('default');
-// const secondLineThemeVars: IElementCssVarsConfig = reactive({});
+const currentSecondLineTheme = ref<'default' | 'tiny'>('default');
+const secondLineThemeVars: IElementCssVarsConfig = reactive({});
 // 局部主题切换
-// function switchSecondLineTheme() {
-//   if (currentSecondLineTheme.value === 'tiny') {
-//     currentSecondLineTheme.value = 'default';
-//     Object.assign(secondLineThemeVars, themeVars);
-//   } else {
-//     currentSecondLineTheme.value = 'tiny';
-//     Object.assign(secondLineThemeVars, tinyThemeVars);
-//   }
-// }
+function switchSecondLineTheme() {
+  if (currentSecondLineTheme.value === 'tiny') {
+    currentSecondLineTheme.value = 'default';
+    Object.assign(secondLineThemeVars, themeVars);
+  } else {
+    currentSecondLineTheme.value = 'tiny';
+    Object.assign(secondLineThemeVars, tinyThemeVars);
+  }
+}
 </script>
 
 <template>
@@ -59,7 +59,7 @@ import {
         Button
       </Button>
     </div>
-    <!-- <ConfigProvider
+    <ConfigProvider
       class="btns"
       :theme-vars="secondLineThemeVars"
     >
@@ -96,7 +96,7 @@ import {
       >
         Button
       </Button>
-    </ConfigProvider> -->
+    </ConfigProvider>
     <div class="btns">
       <Button disabled>
         Button
@@ -133,12 +133,12 @@ import {
       </Button>
     </div>
     <div class="btns">
-      <!-- <Button @click="switchGlobalTheme">
+      <Button @click="switchGlobalTheme">
         切换全局主题，当前：{{ currentGlobalTheme }}
       </Button>
       <Button @click="switchSecondLineTheme">
         切换第二行主题，当前：{{ currentSecondLineTheme }}
-      </Button> -->
+      </Button>
     </div>
     <div>
       <i class="i-op-alert text-100px c-primary inline-block" />

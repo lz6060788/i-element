@@ -1,4 +1,3 @@
-// packages/shared/src/types/InferVueDefaults.ts
 type NativeType = null | number | string | boolean | symbol | Function;
 type InferDefault<P, T> = ((props: P) => T & {}) | (T extends NativeType ? T : never);
 

@@ -1,8 +1,8 @@
-import { defineConfig, presetUno } from 'unocss';
+import { defineConfig, presetUno, UserConfig } from 'unocss';
 import transformerDirectives from '@unocss/transformer-directives';
-import { iElementPreset } from '@i-element/styles/src/unoPreset';
+import { iElementPreset } from './packages/styles/src/unoPreset';
 
-export default defineConfig({
+export default <UserConfig>defineConfig({
   presets: [
     presetUno(),
     iElementPreset(),

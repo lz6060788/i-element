@@ -1,4 +1,3 @@
-// packages/styles/src/utils/colors.ts
 /** RGBA 颜色对象 */
 interface RGBAColor {
   /** r、g、b、a 值 */
@@ -7,7 +6,7 @@ interface RGBAColor {
   /** 获取 rgb 值，例如：255,255,255 */
   get rgbTxt(): string;
 
-  /** 获取 rgba 完整表示，例如：rgba(255,255,255,1) */
+  /** 获取 rgba 完整表示，例如：rgb(255 255 255 / 1) */
   get rgba(): string;
 }
 
@@ -17,10 +16,10 @@ function createRgbaColor(r: number, g: number, b: number, a: number = 1): RGBACo
     args: [r, g, b, a],
     get rgbTxt() {
       const [rr, gg, bb] = this.args;
-      return `${rr}, ${gg}, ${bb}`;
+      return `${rr} ${gg} ${bb}`;
     },
     get rgba() {
-      return `rgba(${this.rgbTxt}, ${this.args[3] || 1})`;
+      return `rgb(${this.rgbTxt} / ${this.args[3] || 1})`;
     },
   };
 }
@@ -43,6 +42,20 @@ function hexToRgba(str: string): RGBAColor | null {
   const b = parseInt(colorStr.slice(4, 6), 16);
   return createRgbaColor(r, g, b, 1);
 }
+
+/** 给与一个 CSS 表达式，试图将其转化为 RGBA 颜色对象 */
+export function toRgba(str: string): RGBAColor | null {
+  return hexToRgba(str) ||
+    parseCssFunc(str);
+}
+
+/**
+ * 暂时只支持 rgb 和 rgba
+ * @todo 实现对 hsl 和 hsla 以及其他函数的支持
+ */
+
+/** 支持的 css 颜色函数类型 */
+const cssColorFunctions = ['rgb', 'rgba'];
 
 /** 将函数形式的 CSS 表达式转换为 RGBA 颜色对象。 */
 function parseCssFunc(str: string): RGBAColor | null {
@@ -70,20 +83,6 @@ function parseCssFunc(str: string): RGBAColor | null {
   // 暂不实现对 hsl 和 hsla 以及其他函数的支持
   return null;
 }
-
-/** 给与一个 CSS 表达式，试图将其转化为 RGBA 颜色对象 */
-export function toRgba(str: string): RGBAColor | null {
-  return hexToRgba(str) ||
-    parseCssFunc(str);
-}
-
-/**
- * 暂时只支持 rgb 和 rgba
- * @todo 实现对 hsl 和 hsla 以及其他函数的支持
- */
-
-/** 支持的 css 颜色函数类型 */
-const cssColorFunctions = ['rgb', 'rgba'];
 
 /**
  * 颜色混合
@@ -114,7 +113,7 @@ export function generateRgbColorLevels(color: RGBAColor, levels: number = 9) {
     dark: <RGBAColor[]>[],
   };
 
-  if (color.rgbTxt === '0, 0, 0' || color.rgbTxt === '255, 255, 255') {
+  if (color.rgbTxt === '0 0 0' || color.rgbTxt === '255 255 255') {
     return result;
   }
 

@@ -1,4 +1,4 @@
-// 预设相关，用于其他包引入unocss，node环境构建入口
+// 预设相关，用于开发环境引入unocss，node环境构建入口
 import { mergeConfigs, Preset, UserConfig } from 'unocss';
 import { Theme } from 'unocss/preset-mini';
 import {

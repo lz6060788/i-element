@@ -109,9 +109,9 @@ export function getCssVar<
   return `var(--${prefix}${name as string})`;
 }
 
-/** 将颜色 css 变量转换为有效颜色：255,255,255 => rgba(255,255,255,1) */
+/** 将颜色 css 变量转换为有效颜色：255,255,255 => rgb(255 255 255 / 1) */
 export function cssVarToRgba<
   T extends Record<string, any> = Record<string, any>,
 >(name: keyof T, alpha: number = 1, prefix: string = DEFAULT_PREFIX) {
-  return `rgba(${getCssVar(name, prefix)},${alpha})`;
+  return `rgb(${getCssVar(name, prefix)} / ${alpha})`;
 }

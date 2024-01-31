@@ -3,7 +3,7 @@ import { mergeConfig, UserConfig } from 'vite';
 import { presetUno, PresetUnoOptions } from 'unocss/preset-uno';
 import unocss from 'unocss/vite';
 import transformerDirectives from '@unocss/transformer-directives';
-import { iElementPreset, IElementPresetOptions } from '@i-element/styles/src/unoPreset';
+import { iElementPreset, IElementPresetOptions } from '../../styles/src/unoPreset';
 import { generateConfig } from './common';
 import { absCwd, relCwd, GenerateConfigOptions } from '../src';
 

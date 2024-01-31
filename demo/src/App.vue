@@ -11,7 +11,6 @@ import {
 } from '@i-element/ui';
 
 const { setTheme } = useTheme();
-
 const currentGlobalTheme = ref<'default' | 'tiny'>('default');
 
 // 全局主题切换
@@ -141,8 +140,8 @@ function switchSecondLineTheme() {
       </Button>
     </div>
     <div>
-      <i class="i-op-alert text-100px c-primary inline-block" />
-      <i class="i-op-alert-marked text-60px c-success inline-block" />
+      <i class="i-icon-info text-100px c-primary c-red inline-block" />
+      <i class="i-icon-success text-60px c-success inline-block" />
     </div>
     <Input />
   </div>

@@ -49,6 +49,7 @@ export function useTheme() {
 }
 
 export const Theme: Plugin<IElementCssVarsConfig[]> = {
+  // 全局注册时指定主题
   install: (app, ...options) => {
     const finalOptions: IElementCssVarsConfig = {};
     options.forEach((item) => {

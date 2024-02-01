@@ -1,3 +1,39 @@
+<script setup lang="ts">
+import { ref } from 'vue';
+import { hello } from '@i-element/shared';
+import {
+  defaultInputProps,
+  InputProps,
+  InputEmits,
+  InputExpose,
+} from './props';
+
+withDefaults(
+  defineProps<InputProps>(),
+  defaultInputProps(),
+);
+
+const emit = defineEmits<InputEmits>();
+
+function inputHandler(e: any) {
+  const { value } = e.target;
+  emit('update:modelValue', value);
+  hello(`${value}`);
+}
+
+function clear() {
+  emit('update:modelValue', '');
+}
+
+const a = ref(0);
+
+defineExpose<InputExpose>({
+  clear,
+  a,
+});
+
+</script>
+
 <template>
   <input
     class="openx-input"
@@ -6,25 +42,3 @@
     @input="inputHandler"
   >
 </template>
-
-<script setup lang="ts">
-// packages/input/src/input.vue
-import { hello } from '@i-element/shared';
-
-withDefaults(defineProps<{
-  modelValue?: string;
-}>(), {
-  modelValue: '',
-});
-
-const emit = defineEmits<{
-  (event: 'update:modelValue', val: string): void;
-}>();
-
-function inputHandler(e: any) {
-  const { value } = e.target;
-  emit('update:modelValue', value);
-  hello(value);
-}
-
-</script>

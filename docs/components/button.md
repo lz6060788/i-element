@@ -1,7 +1,3 @@
-<script setup>
-import demo1 from '../demo/button/button1.vue'
-</script>
-
 # Button 按钮
 
 常用的操作按钮。
@@ -10,16 +6,16 @@ import demo1 from '../demo/button/button1.vue'
 
 基础的按钮用法。
 
-<!-- 展示组件 -->
-<Demo>
-  <template #demo>
-    <demo1></demo1>
-  </template>
-  <template #code>
+:::demo
 
-<<< ../demo/button/button1.vue
+../demo/button/button1.vue
 
-  </template>
-</Demo>
+:::
 
-## Button API
+## 基础用法2
+
+111
+
+## [Button Props](../api/interfaces/Button.ButtonProps.md)
+
+## [Button Slots](../api/modules/Button.ButtonSlots.md)

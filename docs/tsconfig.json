@@ -8,8 +8,8 @@
     // 因为 baseUrl 改变了，基础配置中的 paths 也需要一并重写
     "paths": {
       // 将 @openxui/xxx 内部依赖定位到源码路径
-      "@i-element/*": ["../packages/*/src"]
-    }
+      "@i-element/*": ["../packages/*/src"],
+    },
   },
   "include": [
     // 文档应用会引用其他子模块的源码，因此都要包含到 include 中
@@ -19,7 +19,7 @@
     // demo 目录存放用例代码
     "demo/**/*",
     // 脚本目录，之后会涉及
-    "scripts/**/*"
+    "scripts/**/*",
   ],
-  "exclude": ["**/dist", "**/cache"]
+  "exclude": ["**/dist", "**/cache"],
 }

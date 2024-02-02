@@ -1,7 +1,8 @@
 /** @module Input */
 import { Ref } from 'vue';
 import { InferVueDefaults } from '@i-element/shared';
-import { ButtonProps, defaultButtonProps } from '@i-element/button';
+import { defaultButtonProps, ButtonProps } from '@i-element/button';
+import type Input from './input.vue';
 
 /** 输入框组件的属性 */
 export interface InputProps extends ButtonProps {
@@ -40,3 +41,5 @@ export interface InputExpose {
   /** 响应式变量 */
   a: Ref<number>;
 }
+
+export type InputInstance = InstanceType<typeof Input>;

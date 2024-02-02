@@ -3,12 +3,16 @@ import { ref } from 'vue';
 import { hello } from '@i-element/shared';
 import {
   defaultInputProps,
-  InputProps,
   InputEmits,
+  InputProps,
   InputExpose,
 } from './props';
 
-withDefaults(
+// interface TypeA {
+//   explain: boolean
+// };
+
+const props = withDefaults(
   defineProps<InputProps>(),
   defaultInputProps(),
 );
@@ -37,8 +41,8 @@ defineExpose<InputExpose>({
 <template>
   <input
     class="openx-input"
-    type="text"
     :value="modelValue"
+    v-bind="props"
     @input="inputHandler"
   >
 </template>

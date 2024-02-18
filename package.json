@@ -11,6 +11,7 @@
     "type:src": "pnpm run clean:type && vue-tsc -p tsconfig.src.json --composite false --declaration --emitDeclarationOnly",
     "dev:demo": "pnpm --filter @i-element/demo run dev",
     "dev:docs": "pnpm --filter @i-element/docs run dev",
+    "build:docs": "pnpm --filter @i-element/docs run build",
     "build:ui": "pnpm run type:src && pnpm --filter ./packages/** run build"
   },
   "devDependencies": {

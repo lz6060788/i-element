@@ -1,0 +1,54 @@
+{
+  "name": "@i-element/build",
+  "version": "0.0.0",
+  "description": "",
+  "keywords": [
+    "vue",
+    "ui",
+    "component library"
+  ],
+  "author": "irises",
+  "license": "MIT",
+  "homepage": "",
+  "repository": {
+    "type": "git",
+    "url": ""
+  },
+  "scripts": {
+    "build": "vite build",
+    "test": "echo test"
+  },
+  "main": "./dist/i-element-build.umd.js",
+  "module": "./dist/i-element-build.mjs",
+  "types": "./dist/src/index.d.ts",
+  "exports": {
+    ".": {
+      "require": "./dist/i-element-build.umd.js",
+      "import": "./dist/i-element-build.mjs",
+      "types": "./dist/src/index.d.ts"
+    },
+    "./*": "./*"
+  },
+  "files": [
+    "dist",
+    "README.md"
+  ],
+  "publishConfig": {},
+  "peerDependencies": {
+    "vite": ">=3.0.0",
+    "vue": ">=3.0.0"
+  },
+  "peerDependenciesMeta": {
+    "vue": {
+      "optional": true
+    }
+  },
+  "dependencies": {
+    "@rollup/plugin-replace": "^5.0.5",
+    "@vitejs/plugin-vue": "^4.4.0",
+    "rollup-plugin-visualizer": "^5.11.0",
+    "type-fest": "^4.8.3",
+    "typescript": "^5.2.2",
+    "vite-plugin-inspect": "^0.8.1"
+  }
+}

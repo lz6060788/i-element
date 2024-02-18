@@ -1,0 +1,52 @@
+{
+  "name": "@i-element/styles",
+  "version": "0.0.0",
+  "description": "",
+  "keywords": [
+    "vue",
+    "ui",
+    "component library",
+    "styles"
+  ],
+  "author": "irises",
+  "license": "MIT",
+  "homepage": "",
+  "repository": {
+    "type": "git",
+    "url": ""
+  },
+  "scripts": {
+    "build:theme": "vite build --mode theme",
+    "build:unocss": "vite build --mode unocss",
+    "build": "pnpm run build:unocss && pnpm run build:theme"
+  },
+  "files": [
+    "dist",
+    "README.md"
+  ],
+  "publishConfig": {},
+  "peerDependencies": {
+    "unocss": ">=0.58.3",
+    "vue": ">=3.0.0"
+  },
+  "dependencies": {
+    "@i-element/shared": "workspace:^"
+  },
+  "exports": {
+    "./preset": {
+      "require": "./dist/preset.umd.js",
+      "import": "./dist/preset.mjs",
+      "types": "./dist/src/unoPreset.d.ts"
+    },
+    "./*": "./*",
+    ".": {
+      "require": "./dist/i-element-styles.umd.js",
+      "import": "./dist/i-element-styles.mjs",
+      "types": "./dist/src/index.d.ts"
+    },
+    "./style.css": "./dist/style.css"
+  },
+  "main": "./dist/i-element-styles.umd.js",
+  "module": "./dist/i-element-styles.mjs",
+  "types": "./dist/src/index.d.ts"
+}

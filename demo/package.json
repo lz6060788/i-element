@@ -1,0 +1,12 @@
+{
+  "name": "@i-element/demo",
+  "private": true,
+  "scripts": {
+    "dev": "vite dev",
+    "build": "vite build"
+  },
+  "dependencies": {
+    "@i-element/ui": "workspace:^"
+  },
+  "devDependencies": {}
+}

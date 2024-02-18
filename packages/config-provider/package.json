@@ -1,0 +1,48 @@
+{
+  "name": "@i-element/config-provider",
+  "version": "0.0.0",
+  "description": "",
+  "keywords": [
+    "vue",
+    "ui",
+    "component library"
+  ],
+  "author": "irises",
+  "license": "MIT",
+  "homepage": "",
+  "repository": {
+    "type": "git",
+    "url": ""
+  },
+  "bugs": {
+    "url": ""
+  },
+  "scripts": {
+    "build": "vite build",
+    "test": "echo test"
+  },
+  "files": [
+    "dist",
+    "README.md"
+  ],
+  "publishConfig": {},
+  "peerDependencies": {
+    "vue": ">=3.0.0"
+  },
+  "dependencies": {
+    "@i-element/styles": "workspace:^",
+    "@i-element/shared": "workspace:^"
+  },
+  "main": "./dist/i-element-config-provider.umd.js",
+  "module": "./dist/i-element-config-provider.mjs",
+  "types": "./dist/src/index.d.ts",
+  "exports": {
+    ".": {
+      "require": "./dist/i-element-config-provider.umd.js",
+      "import": "./dist/i-element-config-provider.mjs",
+      "types": "./dist/src/index.d.ts"
+    },
+    "./*": "./*",
+    "./style.css": "./dist/style.css"
+  }
+}

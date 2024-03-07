@@ -1,6 +1,5 @@
 <script setup lang="ts">
 import { ref } from 'vue';
-import { hello } from '@i-element/shared';
 import {
   defaultInputProps,
   InputEmits,
@@ -22,7 +21,6 @@ const emit = defineEmits<InputEmits>();
 function inputHandler(e: any) {
   const { value } = e.target;
   emit('update:modelValue', value);
-  hello(`${value}`);
 }
 
 function clear() {

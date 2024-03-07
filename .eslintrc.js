@@ -56,6 +56,8 @@ module.exports = defineConfig({
         functions: false,
       },
     ],
+    'no-underscore-dangle': 0,
+    '@typescript-eslint/naming-convention': 'off',
     'max-len': 'off',
     'import/no-relative-packages': 'off',
 

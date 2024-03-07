@@ -1,1 +1,1 @@
-export * from './tiny';
+export * from './dark';

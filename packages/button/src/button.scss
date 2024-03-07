@@ -1,36 +1,39 @@
-$button-types: primary, success, warning, danger, info;
+$button-types: default, primary, success, warning, danger;
+$button-size: small, medium;
 
 @mixin button-type-styles() {
   @each $type in $button-types {
     &.i-button--#{$type} {
-      --i-button-color: rgb(var(--i-color-reverse));
-      --i-button-bg-color: rgb(var(--i-color-#{$type}));
-      --i-button-border-color: rgb(var(--i-color-#{$type}));
-      --i-button-hover-color: rgb(var(--i-color-reverse));
-      --i-button-hover-bg-color: rgb(var(--i-color-#{$type}-light-3));
-      --i-button-hover-border-color: rgb(var(--i-color-#{$type}-light-3));
-      --i-button-active-color: rgb(var(--i-color-reverse));
-      --i-button-active-bg-color: rgb(var(--i-color-#{$type}-dark-2));
-      --i-button-active-border-color: rgb(var(--i-color-#{$type}-dark-2));
-      --i-button-disabled-color: rgb(var(--i-color-reverse));
-      --i-button-disabled-bg-color: rgb(var(--i-color-#{$type}-light-5));
-      --i-button-disabled-border-color: rgb(var(--i-color-#{$type}-light-5));
+      color: var(--i-button-#{$type}-color);
+      background-color: var(--i-button-#{$type}-background-color);
+      border-color: var(--i-button-#{$type}-border-color);
+
+      &:hover:not(.is-disabled) {
+        color: var(--i-button-#{$type}-color__hover);
+        background-color: var(--i-button-#{$type}-background-color__hover);
+        border-color: var(--i-button-#{$type}-border-color__hover);
+      }
+
+      &:active:not(.is-disabled) {
+        color: var(--i-button-#{$type}-color__active);
+        background-color: var(--i-button-#{$type}-background-color__active);
+        border-color: var(--i-button-#{$type}-border-color__active);
+      }
+
+      &.is-disabled {
+        color: var(--i-button-#{$type}-color__disabled);
+        cursor: not-allowed;
+        background-color: var(--i-button-#{$type}-background-color__disabled);
+        border-color: var(--i-button-#{$type}-border-color__disabled);
+      }
     }
   }
 }
 
-@mixin button-plain-styles() {
-  @each $type in $button-types {
-    &.i-button--#{$type} {
-      --i-button-color: rgb(var(--i-color-#{$type}));
-      --i-button-bg-color: rgb(var(--i-color-#{$type}-light-9));
-      --i-button-border-color: rgb(var(--i-color-#{$type}-light-5));
-      --i-button-hover-color: rgb(var(--i-color-reverse));
-      --i-button-hover-bg-color: rgb(var(--i-color-#{$type}));
-      --i-button-hover-border-color: rgb(var(--i-color-#{$type}));
-      --i-button-disabled-color: rgb(var(--i-color-#{$type}-light-5));
-      --i-button-disabled-bg-color: rgb(var(--i-color-#{$type}-light-9));
-      --i-button-disabled-border-color: rgb(var(--i-color-#{$type}-light-8));
+@mixin button-size-styles() {
+  @each $size in $button-size {
+    &.i-button--#{$size} {
+      height: var(--i-button-height-#{$size});
     }
   }
 }
@@ -40,50 +43,21 @@ $button-types: primary, success, warning, danger, info;
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  padding: var(--i-button-padding-y) var(--i-button-padding-x);
-  font-size: 14px;
+  padding: 0 var(--i-button-padding-x);
+  font-size: var(--i-button-font-size);
   font-weight: normal;
   line-height: 1;
-  color: var(--i-button-color);
+  color: var(--i-button-default-color);
   text-align: center;
   white-space: nowrap;
   cursor: pointer;
   user-select: none;
-  background-color: var(--i-button-bg-color);
-  border-color: var(--i-button-border-color);
+  background-color: var(--i-button-default-background-color);
+  border-color: var(--i-button-default-border-color);
   border-style: solid;
   border-width: 1px;
-  border-radius: 4px;
   outline: none;
 
-  &:hover {
-    color: var(--i-button-hover-color);
-    background-color: var(--i-button-hover-bg-color);
-    border-color: var(--i-button-hover-border-color);
-  }
-
-  &:active {
-    color: var(--i-button-active-color);
-    background-color: var(--i-button-active-bg-color);
-    border-color: var(--i-button-active-border-color);
-  }
-
   @include button-type-styles;
-
-  &.i-button--plain {
-    --i-button-hover-color: rgb(var(--i-color-primary));
-    --i-button-hover-bg-color: rgb(var(--i-color-card));
-    --i-button-hover-border-color: rgb(var(--color-primary));
-
-    @include button-plain-styles;
-  }
-
-  &.i-button--disabled,
-  &.i-button--disabled:hover,
-  &.i-button--disabled:active {
-    color: var(--i-button-disabled-color);
-    cursor: not-allowed;
-    background-color: var(--i-button-disabled-bg-color);
-    border-color: var(--i-button-disabled-border-color);
-  }
+  @include button-size-styles;
 }

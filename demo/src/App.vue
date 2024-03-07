@@ -5,35 +5,36 @@ import {
   Input,
   ConfigProvider,
   useTheme,
-  tinyThemeVars,
+  darkThemeVars,
   themeVars,
   IElementCssVarsConfig,
 } from '@i-element/ui';
 
 const { setTheme } = useTheme();
-const currentGlobalTheme = ref<'default' | 'tiny'>('default');
+const currentGlobalTheme = ref<'default' | 'dark'>('default');
 
 // 全局主题切换
 function switchGlobalTheme() {
-  if (currentGlobalTheme.value === 'tiny') {
+  console.log(currentGlobalTheme.value);
+  if (currentGlobalTheme.value === 'dark') {
     currentGlobalTheme.value = 'default';
     setTheme(themeVars);
   } else {
-    currentGlobalTheme.value = 'tiny';
-    setTheme(tinyThemeVars);
+    currentGlobalTheme.value = 'dark';
+    setTheme(darkThemeVars);
   }
 }
 
-const currentSecondLineTheme = ref<'default' | 'tiny'>('default');
+const currentSecondLineTheme = ref<'default' | 'dark'>('default');
 const secondLineThemeVars: IElementCssVarsConfig = reactive({});
 // 局部主题切换
 function switchSecondLineTheme() {
-  if (currentSecondLineTheme.value === 'tiny') {
+  if (currentSecondLineTheme.value === 'dark') {
     currentSecondLineTheme.value = 'default';
     Object.assign(secondLineThemeVars, themeVars);
   } else {
-    currentSecondLineTheme.value = 'tiny';
-    Object.assign(secondLineThemeVars, tinyThemeVars);
+    currentSecondLineTheme.value = 'dark';
+    Object.assign(secondLineThemeVars, darkThemeVars);
   }
 }
 </script>
@@ -54,7 +55,7 @@ function switchSecondLineTheme() {
       <Button type="warning">
         Button
       </Button>
-      <Button type="info">
+      <Button>
         Button
       </Button>
     </div>
@@ -90,7 +91,6 @@ function switchSecondLineTheme() {
         Button
       </Button>
       <Button
-        type="info"
         plain
       >
         Button
@@ -125,7 +125,6 @@ function switchSecondLineTheme() {
         Button
       </Button>
       <Button
-        type="info"
         disabled
       >
         Button
@@ -138,10 +137,6 @@ function switchSecondLineTheme() {
       <Button @click="switchSecondLineTheme">
         切换第二行主题，当前：{{ currentSecondLineTheme }}
       </Button>
-    </div>
-    <div>
-      <i class="i-icon-info text-100px c-primary c-red inline-block" />
-      <i class="i-icon-success text-60px c-success inline-block" />
     </div>
     <Input />
   </div>

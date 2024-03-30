@@ -1,31 +1,100 @@
-$button-types: default, primary, success, warning, danger;
+$button-types: primary, success, warning, danger;
 $button-size: small, medium;
 
 @mixin button-type-styles() {
-  @each $type in $button-types {
-    &.i-button--#{$type} {
-      color: var(--i-button-#{$type}-color);
-      background-color: var(--i-button-#{$type}-background-color);
-      border-color: var(--i-button-#{$type}-border-color);
+  &.i-button--primary {
+    --i-button-color: rgb(var(--i-color-font5));
+    --i-button-border-color: rgb(var(--i-color-blue2));
+    --i-button-background-color: rgb(var(--i-color-blue1));
 
-      &:hover:not(.is-disabled) {
-        color: var(--i-button-#{$type}-color__hover);
-        background-color: var(--i-button-#{$type}-background-color__hover);
-        border-color: var(--i-button-#{$type}-border-color__hover);
-      }
+    &:hover:not(.is-disabled) {
+      --i-button-color__hover: rgb(var(--i-color-font5));
+      --i-button-border-color__hover: rgb(var(--i-color-blue2));
+      --i-button-background-color__hover: rgb(var(--i-color-blue2));
+    }
 
-      &:active:not(.is-disabled) {
-        color: var(--i-button-#{$type}-color__active);
-        background-color: var(--i-button-#{$type}-background-color__active);
-        border-color: var(--i-button-#{$type}-border-color__active);
-      }
+    &:active:not(.is-disabled) {
+      --i-button-color__active: rgb(var(--i-color-font5));
+      --i-button-border-color__active: rgb(var(--i-color-blue3));
+      --i-button-background-color__active: rgb(var(--i-color-blue3));
+    }
 
-      &.is-disabled {
-        color: var(--i-button-#{$type}-color__disabled);
-        cursor: not-allowed;
-        background-color: var(--i-button-#{$type}-background-color__disabled);
-        border-color: var(--i-button-#{$type}-border-color__disabled);
-      }
+    &.is-disabled {
+      --i-button-color__disabled: rgb(var(--i-color-font8));
+      --i-button-border-color__disabled: rgb(var(--i-color-blue5));
+      --i-button-background-color__disabled: rgb(var(--i-color-blue4));
+    }
+  }
+
+  &.i-button--success {
+    --i-button-color: rgb(var(--i-color-font5));
+    --i-button-border-color: rgb(var(--i-color-green2));
+    --i-button-background-color: rgb(var(--i-color-green1));
+
+    &:hover:not(.is-disabled) {
+      --i-button-color__hover: rgb(var(--i-color-font5));
+      --i-button-border-color__hover: rgb(var(--i-color-green2));
+      --i-button-background-color__hover: rgb(var(--i-color-green2));
+    }
+
+    &:active:not(.is-disabled) {
+      --i-button-color__active: rgb(var(--i-color-font5));
+      --i-button-border-color__active: rgb(var(--i-color-green3));
+      --i-button-background-color__active: rgb(var(--i-color-green3));
+    }
+
+    &.is-disabled {
+      --i-button-color__disabled: rgb(var(--i-color-font8));
+      --i-button-border-color__disabled: rgb(var(--i-color-green5));
+      --i-button-background-color__disabled: rgb(var(--i-color-green4));
+    }
+  }
+
+  &.i-button--danger {
+    --i-button-color: rgb(var(--i-color-font5));
+    --i-button-border-color: rgb(var(--i-color-red2));
+    --i-button-background-color: rgb(var(--i-color-red1));
+
+    &:hover:not(.is-disabled) {
+      --i-button-color__hover: rgb(var(--i-color-font5));
+      --i-button-border-color__hover: rgb(var(--i-color-red2));
+      --i-button-background-color__hover: rgb(var(--i-color-red2));
+    }
+
+    &:active:not(.is-disabled) {
+      --i-button-color__active: rgb(var(--i-color-font5));
+      --i-button-border-color__active: rgb(var(--i-color-red3));
+      --i-button-background-color__active: rgb(var(--i-color-red3));
+    }
+
+    &.is-disabled {
+      --i-button-color__disabled: rgb(var(--i-color-font8));
+      --i-button-border-color__disabled: rgb(var(--i-color-red5));
+      --i-button-background-color__disabled: rgb(var(--i-color-red4));
+    }
+  }
+
+  &.i-button--warning {
+    --i-button-color: rgb(var(--i-color-font5));
+    --i-button-border-color: rgb(var(--i-color-orange2));
+    --i-button-background-color: rgb(var(--i-color-orange1));
+
+    &:hover:not(.is-disabled) {
+      --i-button-color__hover: rgb(var(--i-color-font5));
+      --i-button-border-color__hover: rgb(var(--i-color-orange2));
+      --i-button-background-color__hover: rgb(var(--i-color-orange2));
+    }
+
+    &:active:not(.is-disabled) {
+      --i-button-color__active: rgb(var(--i-color-font5));
+      --i-button-border-color__active: rgb(var(--i-color-orange3));
+      --i-button-background-color__active: rgb(var(--i-color-orange3));
+    }
+
+    &.is-disabled {
+      --i-button-color__disabled: rgb(var(--i-color-font8));
+      --i-button-border-color__disabled: rgb(var(--i-color-orange5));
+      --i-button-background-color__disabled: rgb(var(--i-color-orange4));
     }
   }
 }
@@ -47,16 +116,35 @@ $button-size: small, medium;
   font-size: var(--i-button-font-size);
   font-weight: normal;
   line-height: 1;
-  color: var(--i-button-default-color);
+  color: var(--i-button-color);
   text-align: center;
   white-space: nowrap;
   cursor: pointer;
   user-select: none;
-  background-color: var(--i-button-default-background-color);
-  border-color: var(--i-button-default-border-color);
+  background-color: var(--i-button-background-color);
+  border-color: var(--i-button-border-color);
   border-style: solid;
   border-width: 1px;
   outline: none;
+
+  &:hover:not(.is-disabled) {
+    color: var(--i-button-color__hover);
+    background-color: var(--i-button-background-color__hover);
+    border-color: var(--i-button-border-color__hover);
+  }
+
+  &:active:not(.is-disabled) {
+    color: var(--i-button-color__active);
+    background-color: var(--i-button-background-color__active);
+    border-color: var(--i-button-border-color__active);
+  }
+
+  &.is-disabled {
+    color: var(--i-button-color__disabled);
+    cursor: not-allowed;
+    background-color: var(--i-button-background-color__disabled);
+    border-color: var(--i-button-border-color__disabled);
+  }
 
   @include button-type-styles;
   @include button-size-styles;

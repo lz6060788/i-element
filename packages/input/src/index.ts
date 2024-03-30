@@ -1,5 +1,5 @@
-import Input from './input.vue';
+import IInput from './input.vue';
 
-export { Input };
-export type InputInstance = InstanceType<typeof Input>;
+export { IInput };
+export type InputInstance = InstanceType<typeof IInput>;
 export * from './props';

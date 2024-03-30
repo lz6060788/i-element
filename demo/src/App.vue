@@ -1,8 +1,7 @@
 <script setup lang="ts">
 import { ref, reactive } from 'vue';
 import {
-  Button,
-  Input,
+  IButton,
   ConfigProvider,
   useTheme,
   darkThemeVars,
@@ -15,7 +14,6 @@ const currentGlobalTheme = ref<'default' | 'dark'>('default');
 
 // 全局主题切换
 function switchGlobalTheme() {
-  console.log(currentGlobalTheme.value);
   if (currentGlobalTheme.value === 'dark') {
     currentGlobalTheme.value = 'default';
     setTheme(themeVars);
@@ -40,109 +38,87 @@ function switchSecondLineTheme() {
 </script>
 
 <template>
-  <div>
+  <div class="demo">
     <div class="btns">
-      <Button>Button</Button>
-      <Button type="primary">
+      <i-button>Button</i-button>
+      <i-button type="primary">
         Button
-      </Button>
-      <Button type="success">
+      </i-button>
+      <i-button type="success">
         Button
-      </Button>
-      <Button type="danger">
+      </i-button>
+      <i-button type="danger">
         Button
-      </Button>
-      <Button type="warning">
+      </i-button>
+      <i-button type="warning">
         Button
-      </Button>
-      <Button>
-        Button
-      </Button>
+      </i-button>
     </div>
     <ConfigProvider
       class="btns"
       :theme-vars="secondLineThemeVars"
     >
-      <Button plain>
+      <i-button>
         Button
-      </Button>
-      <Button
-        type="primary"
-        plain
-      >
+      </i-button>
+      <i-button type="primary">
         Button
-      </Button>
-      <Button
-        type="success"
-        plain
-      >
+      </i-button>
+      <i-button type="success">
         Button
-      </Button>
-      <Button
-        type="danger"
-        plain
-      >
+      </i-button>
+      <i-button type="danger">
         Button
-      </Button>
-      <Button
-        type="warning"
-        plain
-      >
+      </i-button>
+      <i-button type="warning">
         Button
-      </Button>
-      <Button
-        plain
-      >
-        Button
-      </Button>
+      </i-button>
     </ConfigProvider>
     <div class="btns">
-      <Button disabled>
+      <i-button disabled>
         Button
-      </Button>
-      <Button
+      </i-button>
+      <i-button
         type="primary"
         disabled
       >
         Button
-      </Button>
-      <Button
+      </i-button>
+      <i-button
         type="success"
         disabled
       >
         Button
-      </Button>
-      <Button
+      </i-button>
+      <i-button
         type="danger"
         disabled
       >
         Button
-      </Button>
-      <Button
+      </i-button>
+      <i-button
         type="warning"
         disabled
       >
         Button
-      </Button>
-      <Button
-        disabled
-      >
-        Button
-      </Button>
+      </i-button>
     </div>
     <div class="btns">
-      <Button @click="switchGlobalTheme">
+      <i-button @click="switchGlobalTheme">
         切换全局主题，当前：{{ currentGlobalTheme }}
-      </Button>
-      <Button @click="switchSecondLineTheme">
+      </i-button>
+      <i-button @click="switchSecondLineTheme">
         切换第二行主题，当前：{{ currentSecondLineTheme }}
-      </Button>
+      </i-button>
     </div>
-    <Input />
   </div>
 </template>
 
 <style lang="scss" scoped>
+.demo {
+  background-color: rgba(var(--i-color-background9) / 100%);
+}
+
 .btns {
   :deep(.i-button) {
     margin-bottom: 10px;

@@ -26,6 +26,10 @@ import {
   ButtonEmits,
 } from './props';
 
+defineOptions({
+  name: 'IButton',
+});
+
 const props = withDefaults(
   defineProps<ButtonProps>(),
   defaultButtonProps(),
@@ -52,7 +56,6 @@ const _props = computed(() => {
 });
 
 const handleClick = (evt: MouseEvent) => {
-  console.log(evt);
   emit('click', evt);
 };
 

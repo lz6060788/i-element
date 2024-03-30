@@ -37,7 +37,7 @@ export const darkThemeVars: IElementCssVarsConfig = {
   'color-blue6': '#232E3D',
 
   'color-purple1': '#6432E5',
-  'color-purple2': '#6432E5',
+  'color-purple2': '#8152FF',
   'color-purple3': '#5325CC',
   'color-purple4': '#23066E',
   'color-purple5': '#452E82',
@@ -101,9 +101,9 @@ export const darkThemeVars: IElementCssVarsConfig = {
   'color-background14': '#494A4D',
 
   'color-font1': '#F6F6F6',
-  'color-font2': '#B4B6B8',
+  'color-font2': '#CFD0D1',
   'color-font3': '#63656C',
-  'color-font4': '#4A4B51',
+  'color-font4': '#54555C',
   'color-font5': '#FFFFFF',
   'color-font6': '#B7B7B8',
   'color-font7': '#B7B7B8',

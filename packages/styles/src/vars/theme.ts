@@ -7,7 +7,7 @@ export const themeColors = {
   'color-brand5': '#C4D5EF',
   'color-brand6': '#EAF2FF',
 
-  'color-red1': '#E50E1B',
+  'color-red1': '#CC0814',
   'color-red2': '#BD000B',
   'color-red3': '#E58187',
   'color-red4': '#F5B0B5',

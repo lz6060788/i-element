@@ -1,153 +1,124 @@
-<!-- docs/demo/button/demo1.vue -->
 <script setup lang="ts">
 import { ref, reactive } from 'vue';
 import {
-  Button,
-  Input,
+  IButton,
   ConfigProvider,
   useTheme,
-  tinyThemeVars,
+  darkThemeVars,
   themeVars,
   IElementCssVarsConfig,
 } from '@i-element/ui';
 
 const { setTheme } = useTheme();
+const currentGlobalTheme = ref<'default' | 'dark'>('default');
 
-const currentGlobalTheme = ref<'default' | 'tiny'>('default');
-
+// 全局主题切换
 function switchGlobalTheme() {
-  if (currentGlobalTheme.value === 'tiny') {
+  if (currentGlobalTheme.value === 'dark') {
     currentGlobalTheme.value = 'default';
     setTheme(themeVars);
   } else {
-    currentGlobalTheme.value = 'tiny';
-    setTheme(tinyThemeVars);
+    currentGlobalTheme.value = 'dark';
+    setTheme(darkThemeVars);
   }
 }
 
-const currentSecondLineTheme = ref<'default' | 'tiny'>('default');
+const currentSecondLineTheme = ref<'default' | 'dark'>('default');
 const secondLineThemeVars: IElementCssVarsConfig = reactive({});
+// 局部主题切换
 function switchSecondLineTheme() {
-  if (currentSecondLineTheme.value === 'tiny') {
+  if (currentSecondLineTheme.value === 'dark') {
     currentSecondLineTheme.value = 'default';
     Object.assign(secondLineThemeVars, themeVars);
   } else {
-    currentSecondLineTheme.value = 'tiny';
-    Object.assign(secondLineThemeVars, tinyThemeVars);
+    currentSecondLineTheme.value = 'dark';
+    Object.assign(secondLineThemeVars, darkThemeVars);
   }
 }
 </script>
 
 <template>
-  <div>
+  <div class="demo">
     <div class="btns">
-      <Button>Button</Button>
-      <Button type="primary">
+      <i-button>Button</i-button>
+      <i-button type="primary">
         Button
-      </Button>
-      <Button type="success">
+      </i-button>
+      <i-button type="success">
         Button
-      </Button>
-      <Button type="danger">
+      </i-button>
+      <i-button type="danger">
         Button
-      </Button>
-      <Button type="warning">
+      </i-button>
+      <i-button type="warning">
         Button
-      </Button>
-      <Button type="info">
-        Button
-      </Button>
+      </i-button>
     </div>
     <ConfigProvider
       class="btns"
       :theme-vars="secondLineThemeVars"
     >
-      <Button plain>
+      <i-button>
         Button
-      </Button>
-      <Button
-        type="primary"
-        plain
-      >
+      </i-button>
+      <i-button type="primary">
         Button
-      </Button>
-      <Button
-        type="success"
-        plain
-      >
+      </i-button>
+      <i-button type="success">
         Button
-      </Button>
-      <Button
-        type="danger"
-        plain
-      >
+      </i-button>
+      <i-button type="danger">
         Button
-      </Button>
-      <Button
-        type="warning"
-        plain
-      >
+      </i-button>
+      <i-button type="warning">
         Button
-      </Button>
-      <Button
-        type="info"
-        plain
-      >
-        Button
-      </Button>
+      </i-button>
     </ConfigProvider>
     <div class="btns">
-      <Button disabled>
+      <i-button disabled>
         Button
-      </Button>
-      <Button
+      </i-button>
+      <i-button
         type="primary"
         disabled
       >
         Button
-      </Button>
-      <Button
+      </i-button>
+      <i-button
         type="success"
         disabled
       >
         Button
-      </Button>
-      <Button
+      </i-button>
+      <i-button
         type="danger"
         disabled
       >
         Button
-      </Button>
-      <Button
+      </i-button>
+      <i-button
         type="warning"
         disabled
       >
         Button
-      </Button>
-      <Button
-        type="info"
-        disabled
-      >
-        Button
-      </Button>
+      </i-button>
     </div>
     <div class="btns">
-      <Button @click="switchGlobalTheme">
+      <i-button @click="switchGlobalTheme">
         切换全局主题，当前：{{ currentGlobalTheme }}
-      </Button>
-      <Button @click="switchSecondLineTheme">
-        切换第二行主题1，当前：{{ currentSecondLineTheme }}
-      </Button>
+      </i-button>
+      <i-button @click="switchSecondLineTheme">
+        切换第二行主题，当前：{{ currentSecondLineTheme }}
+      </i-button>
     </div>
-    <div>
-      <i class="i-icon-warning inline-block text-100px c-primary" />
-      <i class="i-icon-success inline-block text-60px c-success" />
-    </div>
-    <Input />
   </div>
 </template>
 
 <style lang="scss" scoped>
+.demo {
+  background-color: rgba(var(--i-color-background9) / 100%);
+}
+
 .btns {
   :deep(.i-button) {
     margin-bottom: 10px;

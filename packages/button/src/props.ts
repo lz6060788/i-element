@@ -1,7 +1,7 @@
 /** @module Button */
 import { InferVueDefaults } from '@i-element/shared';
 
-export type ButtonType = 'default' | 'primary' | 'success' | 'warning' | 'danger';
+export type ButtonType = '' | 'primary' | 'success' | 'warning' | 'danger';
 export type ButtonSize = 'small' | 'medium';
 
 /** 按钮组件的属性 */
@@ -46,7 +46,7 @@ export interface ButtonProps {
 
 export function defaultButtonProps() {
   return {
-    type: 'default',
+    type: '',
     disabled: false,
     nativeType: 'button',
     loading: false,

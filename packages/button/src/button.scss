@@ -148,4 +148,8 @@ $button-size: small, medium;
 
   @include button-type-styles;
   @include button-size-styles;
+
+  &__icon ~ &__text {
+    margin-left: 4px;
+  }
 }

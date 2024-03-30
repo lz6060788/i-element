@@ -12,7 +12,23 @@
     ]"
     @click="handleClick"
   >
-    <slot :type="type" />
+    <template v-if="icon || $slots.icon">
+      <span
+        v-if="icon"
+        :class="[`i-icon-${icon}`, ns.e('icon')]"
+      />
+      <slot
+        v-else
+        name="icon"
+        :class="[ns.e('icon')]"
+      />
+    </template>
+    <span
+      v-if="$slots.default"
+      :class="[ns.e('text')]"
+    >
+      <slot />
+    </span>
   </component>
 </template>
 

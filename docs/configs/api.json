@@ -3,6 +3,10 @@
     "text": "基础组件",
     "items": [
       {
+        "text": "Icon 图标",
+        "link": "/components/icons"
+      },
+      {
         "text": "Button 按钮",
         "link": "/api/modules/Button",
         "collapsed": true,
@@ -27,10 +31,6 @@
         "link": "/api/modules/Input",
         "collapsed": true,
         "items": [
-          {
-            "text": "InputEmits",
-            "link": "/api/interfaces/Input.InputEmits"
-          },
           {
             "text": "InputExpose",
             "link": "/api/interfaces/Input.InputExpose"

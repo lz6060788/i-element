@@ -42,6 +42,12 @@ export interface ButtonProps {
    */
   size: ButtonSize,
 
+  /**
+   * 图标
+   * @default ''
+   */
+  icon: string
+
 }
 
 export function defaultButtonProps() {
@@ -52,6 +58,7 @@ export function defaultButtonProps() {
     loading: false,
     tag: 'button',
     size: 'small',
+    icon: '',
   } satisfies Required<InferVueDefaults<ButtonProps>>;
 }
 
@@ -61,8 +68,6 @@ export type ButtonEmits = {
 
 /** 按钮组件的插槽信息 */
 export interface ButtonSlots {
-  default(props: {
-    /** 按钮的类型 */
-    type: ButtonType
-  }): any;
+  default: any;
+  icon: any;
 }

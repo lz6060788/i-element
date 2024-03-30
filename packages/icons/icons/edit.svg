@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="16px" height="16px" viewBox="0 0 16 16" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 52.3 (67297) - http://www.bohemiancoding.com/sketch -->
+    <title>编辑-默认</title>
+    <desc>Created with Sketch.</desc>
+    <g id="-" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="篮子管理" transform="translate(-289.000000, -64.000000)">
+            <g id="编辑-默认_export" transform="translate(289.000000, 64.000000)">
+                <g id="编辑-默认">
+                    <rect id="Rectangle" fill="#000000" opacity="0" x="0" y="0" width="16" height="16"></rect>
+                    <path d="M1.87302609,11.1753191 L1.87302609,13.5030689 L4.20123956,13.5030689 L10.9416296,6.70204802 L8.61261666,4.37436219 L1.87302609,11.1753191 Z M12.7178653,4.92539658 C12.9637306,4.68041067 12.9637306,4.31240419 12.7178653,4.06826572 L11.309684,2.65829369 C11.0636908,2.41369153 10.6966916,2.41369153 10.4506664,2.65829369 L9.34767027,3.76135381 L11.6766832,6.08996702 L12.7178653,4.92539658 Z M7.3874633,12.2779156 L6.16230995,13.5030689 L14.1269579,13.5030689 L14.1269579,12.2779156 L7.3874633,12.2779156 Z" id="Shape" fill="#007AD0" fill-rule="nonzero"></path>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

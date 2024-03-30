@@ -48,6 +48,9 @@ export interface GenerateIconifyOptions {
 
   /** 生成的 iconify 规范的 json 文件的路径 */
   jsonOutput?: string;
+
+  /** 生成的 js 文件的路径，内容为图标名集合 */
+  jsOutput?: string;
 }
 
 /** 指定一系列 svg 图标，生成 iconify 规范的 json 文件以及对应的图标 css 文件 */
@@ -59,6 +62,7 @@ export async function generateIconify(options: GenerateIconifyOptions = {}) {
     cssCommonSelector = '',
     cssOutput = '',
     jsonOutput = absCwd(iconsDir, 'icons.json'),
+    jsOutput = '',
   } = options;
 
   const { log } = console;
@@ -127,4 +131,7 @@ export async function generateIconify(options: GenerateIconifyOptions = {}) {
     await outputFile(cssOutput, css, 'utf8');
     log(`Saved CSS (${css.length} bytes)`);
   }
+
+  const jsContent = `export default [${names.map((name) => `'i-${prefix}-${name}'`)}]`;
+  await outputFile(jsOutput, jsContent, 'utf-8');
 }

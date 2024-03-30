@@ -4,7 +4,7 @@ const list = ['i-icon-account', 'i-icon-add', 'i-icon-arrow', 'i-icon-back', 'i-
   'i-icon-delete', 'i-icon-download', 'i-icon-dragable', 'i-icon-edit', 'i-icon-envelope', 'i-icon-eye-close', 'i-icon-eye', 'i-icon-flash',
   'i-icon-fresh', 'i-icon-help', 'i-icon-info-fill', 'i-icon-info', 'i-icon-keyboard', 'i-icon-light',
   'i-icon-list', 'i-icon-little-triangle', 'i-icon-lock-off', 'i-icon-lock-on', 'i-icon-more', 'i-icon-password', 'i-icon-plus', 'i-icon-question',
-  'i-icon-remove', 'i-icon-repair', 'i-icon-right', 'i-icon-setting', 'i-icon-slider', 'i-icon-strategy', 'i-icon-success-fill',
+  'i-icon-remove', 'i-icon-right', 'i-icon-setting', 'i-icon-slider', 'i-icon-strategy', 'i-icon-success-fill',
   'i-icon-success', 'i-icon-switch', 'i-icon-table', 'i-icon-top', 'i-icon-trend', 'i-icon-trush', 'i-icon-up', 'i-icon-warning',
 ];
 
@@ -22,9 +22,6 @@ const copy = async (text: string) => {
 
 <template>
   <div class="demo">
-    <p class="title">
-      图标库
-    </p>
     <ul class="icons-container">
       <li
         v-for="item in list"
@@ -62,15 +59,9 @@ ul,
   list-style: none;
 }
 
-.title {
-  font-size: 24px;
-  font-weight: 600;
-  color: rgba(var(--i-color-font1));
-}
-
 .icons-container {
   display: grid;
-  grid-template-columns: repeat(7, 1fr);
+  grid-template-columns: repeat(4, 1fr);
   width: 100%;
   padding: 0;
   color: rgba(var(--i-color-font2));
@@ -86,6 +77,7 @@ ul,
     align-items: center;
     justify-content: center;
     padding: 8px;
+    margin-top: 0;
     cursor: pointer;
     border-color: rgba(var(--i-color-background6));
     border-style: solid;

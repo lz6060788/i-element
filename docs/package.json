@@ -9,6 +9,7 @@
   },
   "dependencies": {
     "@i-element/ui": "workspace:^",
+    "fsevents": "^2.3.3",
     "markdown-it": "^14.0.0",
     "markdown-it-container": "^4.0.0"
   },

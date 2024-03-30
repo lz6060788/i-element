@@ -45,6 +45,7 @@
     },
     "./*": "./*",
     "./icons.css": "./dist/icons.css",
-    "./icons.json": "./dist/icons.json"
+    "./icons.json": "./dist/icons.json",
+    "./icons.js": "./dist/icons.js"
   }
 }

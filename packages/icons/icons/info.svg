@@ -1,6 +1,17 @@
-<?xml version="1.0" standalone="no"?>
-<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
-<svg t="1706669923186" class="icon" fill="currentColor" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="2073" xmlns:xlink="http://www.w3.org/1999/xlink" width="200" height="200">
-  <path fill="currentColor" d="M64 512C64 264.58 264.58 64 512 64s448 200.58 448 448-200.58 448-448 448S64 759.42 64 512z m404-184c0 8.84 7.16 16 16 16h56c8.84 0 16-7.16 16-16v-56c0-8.84-7.16-16-16-16h-56c-8.84 0-16 7.16-16 16v56z m-23 168h36v256c0 8.84 7.16 16 16 16h56c8.84 0 16-7.16 16-16V424c0-8.84-7.16-16-16-16H445c-8.84 0-16 7.16-16 16v56c0 8.84 7.16 16 16 16z" p-id="2074">
-  </path>
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="24px" height="24px" viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>提示 (2) copy 3</title>
+    <g id="规范及控件" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="弹窗" transform="translate(-459.000000, -1351.000000)" fill-rule="nonzero">
+            <g id="Group-11" transform="translate(435.000000, 1297.000000)">
+                <g id="Group-10" transform="translate(24.000000, 54.000000)">
+                    <g id="Group" transform="translate(0.000000, -0.492188)">
+                        <circle id="Oval" stroke="#E68C05" stroke-width="2" cx="12" cy="12.4921875" r="11"></circle>
+                        <rect fill="#E68C05" x="11.0769231" y="6.46153846" width="2" height="7"></rect>
+                        <rect fill="#E68C05" x="11" y="16" width="2" height="2"></rect>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
 </svg>

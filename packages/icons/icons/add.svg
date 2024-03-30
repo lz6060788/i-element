@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="16px" height="16px" viewBox="0 0 16 16" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>新建组件方案-hover</title>
+    <g id="页面-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="快捷操作" transform="translate(-889.000000, -1431.000000)">
+            <g id="Group-25备份-5" transform="translate(777.000000, 1341.000000)">
+                <g id="编组-35" transform="translate(112.000000, 90.000000)">
+                    <g id="编组" transform="translate(1.000000, 1.000000)" fill="#1D71F0" fill-rule="nonzero">
+                        <polygon id="路径" points="6.5 6.5 6.5 4 7.5 4 7.5 6.5 10 6.5 10 7.5 7.5 7.5 7.5 10 6.5 10 6.5 7.5 4 7.5 4 6.5"></polygon>
+                        <path d="M7,1 C10.3137085,1 13,3.6862915 13,7 C13,10.3137085 10.3137085,13 7,13 C3.6862915,13 1,10.3137085 1,7 C1,3.6862915 3.6862915,1 7,1 M7,0 C3.13400675,0 0,3.13400675 0,7 C0,10.8659932 3.13400675,14 7,14 C10.8659932,14 14,10.8659932 14,7 C14,3.13400675 10.8659932,0 7,0 L7,0 Z" id="形状"></path>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

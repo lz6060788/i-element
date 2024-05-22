@@ -1,6 +1,5 @@
 {
   "name": "i-element",
-  "private": true,
   "scripts": {
     "prepare": "husky install",
     "lint:script": "eslint --ext .js,.jsx,.ts,.tsx,.vue --fix ./",

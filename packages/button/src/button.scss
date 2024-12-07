@@ -1,5 +1,5 @@
 $button-types: primary, success, warning, danger;
-$button-size: small, medium;
+$button-size: small, medium, large;
 
 @mixin button-type-styles() {
   &.i-button--primary {

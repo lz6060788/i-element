@@ -1,4 +1,4 @@
-import { defineConfig } from 'vitepress'
+import { defineConfig } from 'vitepress';
 import { mdPlugin } from './plugins';
 
 import apiConfig from '../configs/api.json';
@@ -38,6 +38,6 @@ export default defineConfig({
       '/components/': componentsConfig,
       // API 文档部分的章节导航
       '/api/': apiConfig,
-    }
-  }
-})
+    },
+  },
+});

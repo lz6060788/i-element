@@ -5,12 +5,14 @@ import {
   baseConfig,
   themeConfig,
   buttonConfig,
+  inputConfig,
 } from './unocss';
 
 /** 组件名称与预设对象的关系表 */
 const configMaps = {
   theme: themeConfig,
   button: buttonConfig,
+  input: inputConfig,
 } satisfies Record<string, UserConfig<Theme>>;
 
 type ConfigKeys = keyof typeof configMaps;

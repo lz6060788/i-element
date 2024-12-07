@@ -38,7 +38,7 @@ export interface InputProps {
    * 统计数值
    * @default false
    */
-  'show-count'?: boolean
+  showCount?: boolean
   /**
    * 占位文本
    * @default ''
@@ -48,12 +48,12 @@ export interface InputProps {
    * 是否可清除
    * @default false
    */
-  clearable?: false
+  clearable?: boolean
   /**
    * 是否显示密码显隐按钮
    * @default false
    */
-  'show-password'?: false
+  showPassword?: false
   /**
    * 尺寸
    * @default 'medium'
@@ -63,22 +63,27 @@ export interface InputProps {
    * 前缀图标
    * @default ''
    */
-  'prefix-icon'?: string
+  prefixIcon?: string
   /**
    * 前缀图标是否不响应事件
    * @default: true
    */
-  'prefix-icon-silent'?: boolean
+  prefixIconSilent?: boolean
   /**
    * 后缀图标
    * @default ''
    */
-  'suffix-icon'?: string
+  suffixIcon?: string
   /**
    * 后缀图标是否不响应事件
    * @default: true
    */
-  'suffix-icon-silent'?: boolean
+  suffixIconSilent?: boolean
+  /**
+   * 后缀内容，如单位等
+   * @default ''
+   */
+  suffixText?: string
   /**
    * 是否自动补全
    * @default ''
@@ -110,19 +115,19 @@ export interface InputProps {
    * 是否触发表单验证
    * @default true
    */
-  'validate-event'?: boolean
+  validateEvent?: boolean
   /**
    * 原生属性
    */
-  max: string
+  max?: string
   /**
    * 原生属性
    */
-  min: string
+  min?: string
   /**
    * 原生属性
    */
-  step: string
+  step?: string
 }
 
 /** @hidden */
@@ -134,22 +139,23 @@ export function defaultInputProps(): Required<InferVueDefaults<InputProps>> {
     readonly: false,
     maxlength: '',
     minlength: '',
-    'show-count': false,
+    showCount: false,
     placeholder: '',
     clearable: false,
-    'show-password': false,
+    showPassword: false,
     size: 'medium',
-    'prefix-icon': '',
-    'prefix-icon-silent': true,
-    'suffix-icon': '',
-    'suffix-icon-silent': true,
+    prefixIcon: '',
+    prefixIconSilent: true,
+    suffixIcon: '',
+    suffixIconSilent: true,
+    suffixText: '',
     autocomplete: '',
     name: '',
     autofocus: false,
     form: '',
     label: '',
     tabindex: '',
-    'validate-event': true,
+    validateEvent: true,
     min: '',
     max: '',
     step: '',
@@ -161,7 +167,7 @@ export type InputEmits = {
   'update:modelValue': [value: string];
   input: [value: string];
   change: [value: string];
-  foccus: [e: FocusEvent];
+  focus: [e: FocusEvent];
   blur: [e: FocusEvent];
   keydown: [e: KeyboardEvent | Event];
 };
@@ -170,6 +176,14 @@ export type InputEmits = {
 export interface InputExpose {
   /** 清空输入框 */
   clear: () => void
+  /** 聚焦 */
+  focus: () => void
+}
+
+/** 按钮组件的插槽信息 */
+export interface InputSlots {
+  prefix: any;
+  suffix: any;
 }
 
 export type InputInstance = InstanceType<typeof Input>;

@@ -2,7 +2,7 @@
 import { InferVueDefaults } from '@i-element/shared';
 
 export type ButtonType = '' | 'primary' | 'success' | 'warning' | 'danger';
-export type ButtonSize = 'small' | 'medium';
+export type ButtonSize = 'small' | 'medium' | 'large';
 
 /** 按钮组件的属性 */
 export interface ButtonProps {

@@ -55,7 +55,7 @@ const copy = async (text: string) => {
 
 <style lang="scss" scoped>
 ul,
- li {
+li {
   list-style: none;
 }
 

@@ -1,58 +1,28 @@
 <script setup lang="ts">
 import {
-  themeVars,
-  darkThemeVars,
-  ConfigProvider,
+  IInput,
 } from '@i-element/ui';
+import { ref } from 'vue';
 
-const copy = async (text: string) => {
-  try {
-    await navigator.clipboard.writeText(text);
-    alert('复制成功');
-  } catch (error) {
-    alert('复制失败！可能是浏览器不兼容');
-  }
-};
+const value = ref('hello');
 </script>
 
 <template>
   <div class="demo">
-    <p class="title">
-      亮色主题
-    </p>
-    <ul class="colors-container">
-      <li
-        v-for="item in Object.keys(themeVars)"
-        :key="item"
-        class="item"
-        :style="{
-          '--color': themeVars[item as keyof typeof themeVars]
-        }"
-        @click="copy(item)"
-      >
-        <p>{{ item }}</p>
-        <p>{{ themeVars[item as keyof typeof themeVars] }}</p>
-      </li>
-    </ul>
-    <p class="title">
-      暗色主题
-    </p>
-    <ConfigProvider :theme-vars="darkThemeVars">
-      <ul class="colors-container dark">
-        <li
-          v-for="item in Object.keys(darkThemeVars)"
-          :key="item"
-          class="item"
-          :style="{
-            '--color': darkThemeVars[item as keyof typeof themeVars]
-          }"
-          @click="copy(item)"
-        >
-          <p>{{ item }}</p>
-          <p>{{ darkThemeVars[item as keyof typeof darkThemeVars] }}</p>
-        </li>
-      </ul>
-    </ConfigProvider>
+    <IInput
+      v-model="value"
+      placeholder="请输入"
+      suffix-text="元"
+      prefix-icon="i-icon-account"
+      suffix-icon="i-icon-account"
+      clearable
+      :prefix-icon-silent="false"
+      :suffix-icon-silent="false"
+    >
+      <!-- <template #suffix>
+        <div class="i-icon-code" />
+      </template> -->
+    </IInput>
   </div>
 </template>
 

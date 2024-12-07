@@ -24,6 +24,7 @@ export const buttonVars = {
 
   'button-height-small': '20px',
   'button-height-medium': '24px',
+  'button-height-large': '28px',
   'button-padding-x': getCssVar<ThemeCssVarsConfig>('spacing-sm'),
   'button-font-size': getCssVar<ThemeCssVarsConfig>('fs12'),
 };

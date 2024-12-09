@@ -169,7 +169,11 @@ export type InputEmits = {
   change: [value: string];
   focus: [e: FocusEvent];
   blur: [e: FocusEvent];
-  keydown: [e: KeyboardEvent | Event];
+  keydown: [e: KeyboardEvent];
+  /** 前缀图标点击 */
+  prefixIconClick: [e: MouseEvent];
+  /** 后缀图表点击 */
+  suffixIconClick: [e: MouseEvent];
 };
 
 /** 输入框组件对外暴露的方法 */

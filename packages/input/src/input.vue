@@ -11,6 +11,7 @@
         ns.b('wrapper'),
         ns.is('readonly', _readonly),
         ns.is('disabled', _disabled),
+        ns.is('active', _isFocus)
       ]"
     >
       <slot name="prefix" />
@@ -20,6 +21,7 @@
           ns.b('prefix-icon'),
           ns.is('silence', _prefixIconIsSilence)
         ]"
+        @click="(e) => $emit('prefixIconClick', e)"
       >
         <div :class="props.prefixIcon" />
       </div>
@@ -37,7 +39,10 @@
           ns.b('clear-icon'),
         ]"
       >
-        <div class="i-icon-delete" />
+        <div
+          class="i-icon-delete"
+          @click="clear"
+        />
       </div>
       <slot name="suffix" />
       <div
@@ -46,6 +51,7 @@
           ns.b('suffix-icon'),
           ns.is('silence', _suffixIconIsSilence)
         ]"
+        @click="(e) => $emit('suffixIconClick', e)"
       >
         <div :class="props.suffixIcon" />
       </div>
@@ -62,7 +68,7 @@ import {
   computed, nextTick, onMounted, shallowRef,
   watch,
 } from 'vue';
-import { useNamespace } from '@i-element/shared';
+import { useNamespace, useFocus, useKeydown } from '@i-element/shared';
 import {
   defaultInputProps,
   InputEmits,
@@ -116,6 +122,9 @@ const setNativeInputValue = () => {
 async function inputHandler(e: any) {
   const { value } = e.target;
 
+  if (value !== props.modelValue) {
+    emit('change', value);
+  }
   emit('update:modelValue', value);
   await nextTick();
   setNativeInputValue();
@@ -136,18 +145,17 @@ watch(
   },
 );
 
-function clickHandler(e: MouseEvent) {
+function clickHandler() {
   _ref.value?.focus();
-  emit('focus', e);
 }
 
 function clear() {
   emit('update:modelValue', '');
 }
 
-function focus() {
-  _ref.value?.focus();
-}
+const { isFocus: _isFocus, focus } = useFocus(_ref);
+
+useKeydown(_ref);
 
 defineExpose<InputExpose>({
   clear,

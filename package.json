@@ -12,7 +12,8 @@
     "dev:docs": "pnpm --filter @i-element/docs run dev",
     "build:docs": "pnpm --filter @i-element/docs run build",
     "build:icons": "pnpm --filter @i-element/icons run build",
-    "build:ui": "pnpm run type:src && pnpm --filter ./packages/** run build"
+    "build:ui": "pnpm run type:src && pnpm --filter ./packages/** run build",
+    "publish": "pnpm --filter ./packages/** run publish"
   },
   "devDependencies": {
     "@commitlint/cli": "^18.4.0",

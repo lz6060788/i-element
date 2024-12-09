@@ -5,6 +5,29 @@ import {
 import { ref } from 'vue';
 
 const value = ref('hello');
+const focus = () => {
+  console.log('focus');
+};
+
+const blur = () => {
+  console.log('blur');
+};
+
+const prefixIconClick = () => {
+  console.log('prefixIconClick');
+};
+
+const suffixIconClick = () => {
+  console.log('suffixIconClick');
+};
+
+const change = (val: string) => {
+  console.log('change', val);
+};
+
+const keydown = (e: KeyboardEvent) => {
+  console.log('keydown', e);
+};
 </script>
 
 <template>
@@ -16,8 +39,14 @@ const value = ref('hello');
       prefix-icon="i-icon-account"
       suffix-icon="i-icon-account"
       clearable
-      :prefix-icon-silent="false"
+      :prefix-icon-silent="true"
       :suffix-icon-silent="false"
+      @focus="focus"
+      @blur="blur"
+      @prefix-icon-click="prefixIconClick"
+      @suffix-icon-click="suffixIconClick"
+      @change="change"
+      @keydown="keydown"
     >
       <!-- <template #suffix>
         <div class="i-icon-code" />

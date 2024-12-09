@@ -21,7 +21,7 @@ $input-size: small, medium, large;
     border-width: 1px;
     border-radius: 0;
 
-    &:focus {
+    &.is-active {
       background-color: var(--i-input-background-color__active);
       border-color: var(--i-input-border-color__active);
     }
@@ -84,6 +84,7 @@ $input-size: small, medium, large;
     }
 
     &.is-silence {
+      pointer-events: none;
       cursor: default;
     }
   }

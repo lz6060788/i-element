@@ -32,7 +32,7 @@ export interface ButtonProps {
 
   /**
    * 自定义标签
-   * @default false
+   * @default 'button'
    */
   tag: string,
 
@@ -46,7 +46,7 @@ export interface ButtonProps {
    * 图标
    * @default ''
    */
-  icon: string
+  icon?: string
 
 }
 

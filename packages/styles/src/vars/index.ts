@@ -1,6 +1,6 @@
 import { ThemeCssVarsConfig } from './theme';
 import { ButtonCssVarsConfig } from './button';
-import { LinkCssVarsConfig } from './link';
+import { TextCssVarsConfig } from './text';
 import { InputCssVarsConfig } from './input';
 
 // 引入其他组件的主题变量类型
@@ -10,7 +10,7 @@ import { InputCssVarsConfig } from './input';
 export interface IElementCssVarsConfig extends
   ThemeCssVarsConfig,
   ButtonCssVarsConfig,
-  LinkCssVarsConfig,
+  TextCssVarsConfig,
   InputCssVarsConfig {
   [key: string]: string | undefined;
 }
@@ -19,5 +19,5 @@ export * from './theme';
 
 // 导出其他组件的主题变量
 export * from './button';
-export * from './link';
+export * from './text';
 export * from './input';

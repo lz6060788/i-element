@@ -8,7 +8,7 @@ export interface InputProps {
    * 输入值，支持 v-model 双向绑定
    * @default ''
    */
-  modelValue?: string;
+  modelValue?: string | number | null | undefined;
   /**
    * 类型，与原生input一致
    * @default 'text'

@@ -1,30 +1,30 @@
-# Input 输入框
+# Text 文本
 
-常用的操作输入框。
+常用的操作文本组件。
 
 ## 基础用法
 
-基础的按钮用法。
+基础的文本组件用法。
 
 :::demo
 
-../demo/input/inputBase.vue
+../demo/text/textBase.vue
 
 :::
 
-## 带图标的输入框
+## 带图标的文本组件
 
 :::demo
 
-../demo/input/inputIcon.vue
+../demo/text/textIcon.vue
 
 :::
 
-## 带单位的输入框
+## 不同大小的文本组件
 
 :::demo
 
-../demo/input/inputUnit.vue
+../demo/text/textSize.vue
 
 :::
 

@@ -3,8 +3,16 @@
     "text": "基础组件",
     "items": [
       {
+        "text": "Theme 主题",
+        "link": "/components/theme"
+      },
+      {
         "text": "Icon 图标",
         "link": "/components/icons"
+      },
+      {
+        "text": "ConfigProvider 配置组件",
+        "link": "/components/config-provider"
       },
       {
         "text": "Button 按钮",
@@ -38,6 +46,10 @@
           {
             "text": "InputProps",
             "link": "/api/interfaces/Input.InputProps"
+          },
+          {
+            "text": "InputSlots",
+            "link": "/api/interfaces/Input.InputSlots"
           }
         ]
       }

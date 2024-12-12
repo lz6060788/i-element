@@ -6,8 +6,8 @@ import componentsConfig from '../configs/components.json';
 
 // 配置参考：https://vitepress.dev/reference/site-config
 export default defineConfig({
-  title: "IElement",
-  description: "Vue3 组件库",
+  title: 'IElement',
+  description: 'Vue3 组件库',
   markdown: {
     config: (md) => {
       md.use(mdPlugin);

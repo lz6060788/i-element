@@ -7,7 +7,9 @@ import {
 <template>
   <div class="demo">
     <IText
+      tag="a"
       type="primary"
+      href="http://www.baidu.com"
       prefix-icon="i-icon-back"
     >
       点击返回

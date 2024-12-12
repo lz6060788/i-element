@@ -15,8 +15,8 @@
         "link": "/components/config-provider"
       },
       {
-        "text": "Button 按钮",
-        "link": "/components/button"
+        "text": "Text 文本",
+        "link": "/components/text"
       }
     ]
   },
@@ -26,6 +26,10 @@
       {
         "text": "Input 输入",
         "link": "/components/input"
+      },
+      {
+        "text": "Button 按钮",
+        "link": "/components/button"
       }
     ]
   }

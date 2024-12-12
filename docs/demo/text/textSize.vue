@@ -6,17 +6,18 @@ import {
 
 <template>
   <div class="demo">
-    <IText
-      type="primary"
-      prefix-icon="i-icon-back"
-    >
-      点击返回
+    <IText>
+      默认小号字体，12px
     </IText>
     <IText
-      type="primary"
-      suffix-icon="i-icon-download"
+      size="medium"
     >
-      点击下载
+      中号字体，14px
+    </IText>
+    <IText
+      size="large"
+    >
+      大号字体，16px
     </IText>
   </div>
 </template>

@@ -49,10 +49,16 @@ export interface TextProps {
   disabled?: boolean;
 
   /**
-   * 图标
+   * 前置图标
    * @default ''
    */
-  icon?: string
+  prefixIcon?: string
+
+  /**
+   * 后置图标
+   * @default ''
+   */
+  suffixIcon?: string
 }
 
 export function defaultTextProps() {
@@ -64,7 +70,8 @@ export function defaultTextProps() {
     target: '_blank',
     href: '',
     tag: 'span',
-    icon: '',
+    prefixIcon: '',
+    suffixIcon: '',
   } satisfies Required<InferVueDefaults<TextProps>>;
 }
 

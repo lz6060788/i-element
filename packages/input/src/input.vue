@@ -34,7 +34,7 @@
         @input="inputHandler"
       >
       <div
-        v-if="props.clearable && modelValue.length"
+        v-if="props.clearable && nativeInputValue.length"
         :class="[
           ns.b('clear-icon'),
         ]"

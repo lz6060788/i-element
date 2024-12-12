@@ -11,7 +11,17 @@
       ns.is('loading', loading),
     ]"
     @click="handleClick"
-  />
+  >
+    <span
+      v-if="_prefixIcon"
+      :class="[_prefixIcon, ns.b('prefix-icon'),]"
+    />
+    <slot />
+    <span
+      v-if="_suffixIcon"
+      :class="[_suffixIcon, ns.b('suffix-icon'),]"
+    />
+  </component>
 </template>
 
 <script setup lang="ts">
@@ -32,12 +42,14 @@ const emit = defineEmits<TextEmits>();
 
 defineSlots<TextSlots>();
 
-const ns = useNamespace('button');
+const ns = useNamespace('text');
 
 const _ref = ref<HTMLButtonElement>();
 const _size = computed(() => props.size);
 const _type = computed(() => props.type);
 const _disabled = computed(() => props.disabled);
+const _prefixIcon = computed(() => props.prefixIcon);
+const _suffixIcon = computed(() => props.suffixIcon);
 const _props = computed(() => {
   if (props.tag === 'a') {
     return {

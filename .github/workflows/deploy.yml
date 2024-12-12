@@ -28,10 +28,10 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      # - name: Checkout
-      #   uses: actions/checkout@v4
-      #   with:
-      #     fetch-depth: 0 # 如果未启用 lastUpdated，则不需要
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0 # 如果未启用 lastUpdated，则不需要
       - uses: pnpm/action-setup@v3 # 如果使用 pnpm，请取消此区域注释
         with:
           version: 9
@@ -48,7 +48,7 @@ jobs:
       - name: Build Icons
         run: pnpm run build:icons
       - name: Build with VitePress
-        run: pnpm run build:docs # 或 pnpm docs:build / yarn docs:build / bun run docs:build
+        run: pnpm run build:docs
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:

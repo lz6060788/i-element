@@ -1,0 +1,53 @@
+$text-types: primary, success, warning, danger;
+$text-size: small, medium, large;
+
+@mixin text-type-styles() {
+  @each $type in $text-types {
+    &.i-text--#{$type} {
+      color: var(--i-text-#{$type}-color);
+      pointer-events: all;
+      cursor: pointer;
+
+      &:hover:not(.is-disabled) {
+        color: var(--i-text-#{$type}-color__hover);
+      }
+
+      &:active:not(.is-disabled) {
+        color: var(--i-text-#{$type}-color__active);
+      }
+
+      &.is-disabled {
+        color: var(--i-text-#{$type}-color__disabled);
+      }
+    }
+  }
+}
+
+@mixin text-size-styles() {
+  @each $size in $text-size {
+    &.i-text--#{$size} {
+      font-size: var(--i-text-size-#{$size});
+    }
+  }
+}
+
+.i-text {
+  display: inline-flex;
+  align-items: center;
+  font-weight: var(--i-text-weight-small);
+  color: var(--i-text-default-color);
+  pointer-events: none;
+
+  @include text-type-styles;
+  @include text-size-styles;
+
+  &-prefix-icon {
+    display: inline-block;
+    margin-right: 4px;
+  }
+
+  &-suffix-icon {
+    display: inline-block;
+    margin-left: 4px;
+  }
+}

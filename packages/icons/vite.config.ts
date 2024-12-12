@@ -19,6 +19,7 @@ export default generateConfig({
     const exports: Record<string, string> = {
       [`./${FILE_NAME}.css`]: relCwd(absCwd(options.outDir, `${FILE_NAME}.css`), false),
       [`./${FILE_NAME}.json`]: relCwd(absCwd(options.outDir, `${FILE_NAME}.json`), false),
+      [`./${FILE_NAME}.js`]: relCwd(absCwd(options.outDir, `${FILE_NAME}.js`), false),
     };
     Object.assign(
       pkg.exports as Record<string, any>,
@@ -42,6 +43,7 @@ function pluginGenerateIconify(): PluginOption {
         prefix: 'icon',
         cssOutput: absCwd(OUT_REL, `${FILE_NAME}.css`),
         jsonOutput: absCwd(OUT_REL, `${FILE_NAME}.json`),
+        jsOutput: absCwd(OUT_REL, `${FILE_NAME}.js`),
       });
     },
   };

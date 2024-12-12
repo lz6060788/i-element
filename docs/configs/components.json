@@ -3,8 +3,20 @@
     "text": "基础组件",
     "items": [
       {
-        "text": "Button 按钮",
-        "link": "/components/button"
+        "text": "Theme 主题",
+        "link": "/components/theme"
+      },
+      {
+        "text": "Icon 图标",
+        "link": "/components/icons"
+      },
+      {
+        "text": "ConfigProvider 配置组件",
+        "link": "/components/config-provider"
+      },
+      {
+        "text": "Text 文本",
+        "link": "/components/text"
       }
     ]
   },
@@ -14,6 +26,10 @@
       {
         "text": "Input 输入",
         "link": "/components/input"
+      },
+      {
+        "text": "Button 按钮",
+        "link": "/components/button"
       }
     ]
   }

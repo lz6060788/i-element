@@ -1,14 +1,14 @@
 {
   "name": "@i-element/docs",
-  "private": true,
   "scripts": {
     "api": "tsx scripts/typedoc.ts",
-    "dev": "vitepress dev . --host",
+    "dev": "vitepress dev . --host --port 8080",
     "build": "pnpm run api && vitepress build .",
     "preview": "vitepress preview . --host"
   },
   "dependencies": {
     "@i-element/ui": "workspace:^",
+    "fsevents": "^2.3.3",
     "markdown-it": "^14.0.0",
     "markdown-it-container": "^4.0.0"
   },

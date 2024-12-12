@@ -1,0 +1,95 @@
+$input-size: small, medium, large;
+
+.i-input {
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  width: 100%;
+  height: var(--i-input-height-medium);
+  font-size: var(--i-input-fontsize);
+
+  &-wrapper {
+    box-sizing: border-box;
+    display: flex;
+    flex: 1;
+    align-items: center;
+    height: 100%;
+    padding: 0 var(--i-input-padding-x);
+    background-color: var(--i-input-background-color);
+    border-color: var(--i-input-border-color);
+    border-style: solid;
+    border-width: 1px;
+    border-radius: 0;
+
+    &.is-active {
+      background-color: var(--i-input-background-color__active);
+      border-color: var(--i-input-border-color__active);
+    }
+
+    &:hover:not(.is-disabled) {
+      background-color: var(--i-input-background-color__hover);
+      border-color: var(--i-input-border-color__hover);
+    }
+
+    &.is-disabled:not(.is-readonly) {
+      color: var(--i-input-color__disabled);
+      background-color: var(--i-input-background-color__disabled);
+      border-color: var(--i-input-border-color__disabled);
+    }
+
+    &.is-readonly {
+      color: var(--i-input-color);
+      background-color: var(--i-input-background-color__readonly);
+      border-color: var(--i-input-border-color__readonly);
+    }
+  }
+
+  &-inner {
+    box-sizing: border-box;
+    flex: 1;
+    height: 100%;
+    padding-left: var(--i-input-padding-x);
+    border: none;
+    outline: none;
+
+    &::placeholder {
+      color: var(--i-input-placeholder-color);
+    }
+  }
+
+  &-clear-icon {
+    margin-right: 4px;
+
+    &:last-child {
+      margin: 0;
+    }
+  }
+
+  &-prefix-icon,
+  &-suffix-icon,
+  &-clear-icon {
+    display: flex;
+    align-items: center;
+    height: 100%;
+    color: var(--i-input-icon-color);
+    cursor: pointer;
+    user-select: none;
+
+    &:hover:not(.is-silence) {
+      color: var(--i-input-icon-color__hover);
+    }
+
+    &:active:not(.is-silence) {
+      color: var(--i-input-icon-color__active);
+    }
+
+    &.is-silence {
+      pointer-events: none;
+      cursor: default;
+    }
+  }
+
+  &-suffix-text {
+    margin-left: var(--i-spacing-xs);
+  }
+}

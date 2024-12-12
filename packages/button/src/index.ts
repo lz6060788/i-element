@@ -1,7 +1,7 @@
-import Button from './button.vue';
+import IButton from './button.vue';
 import './button.scss';
 import 'virtual:uno.css';
 
-export { Button };
-export type ButtonInstance = InstanceType<typeof Button>;
+export { IButton };
+export type ButtonInstance = InstanceType<typeof IButton>;
 export * from './props';

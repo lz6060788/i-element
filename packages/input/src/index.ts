@@ -1,5 +1,7 @@
-import Input from './input.vue';
+import IInput from './input.vue';
+import './input.scss';
+import 'virtual:uno.css';
 
-export { Input };
-export type InputInstance = InstanceType<typeof Input>;
+export { IInput };
+export type InputInstance = InstanceType<typeof IInput>;
 export * from './props';

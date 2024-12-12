@@ -9,7 +9,6 @@ export function generateConfig(
   customOptions?: GenerateConfigOptions,
   viteConfig?: UserConfig,
 ) {
-  console.log(absCwd('../../tsconfig.src.json'));
   return baseGenerateConfig({
     dts: absCwd('../../tsconfig.src.json'),
     ...customOptions,

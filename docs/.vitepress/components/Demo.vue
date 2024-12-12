@@ -16,14 +16,27 @@ const isCodeShow = ref(false);
     <!-- 各种功能操作，如展开源码，跳转到 Playground 等 -->
     <div class="demo-operators">
       <!-- <i class="i-icon-code-screen" title="在 Playground 中编辑" @click="toPlayground" /> -->
-      <i class="i-icon-code" title="查看源代码" @click="isCodeShow = !isCodeShow" />
+      <i
+        class="i-icon-code"
+        title="查看源代码"
+        @click="isCodeShow = !isCodeShow"
+      />
     </div>
-    <div v-if="isCodeShow" class="demo-code">
+    <div
+      v-if="isCodeShow"
+      class="demo-code"
+    >
       <!-- 用例源码插槽 -->
       <slot name="code" />
 
-      <div class="pb-16px text-center" @click="isCodeShow = false">
-        <a href="javascript:;" class="cursor-pointer c-info! no-underline!">隐藏源代码</a>
+      <div
+        class="pb-16px text-center"
+        @click="isCodeShow = false"
+      >
+        <a
+          href="javascript:;"
+          class="cursor-pointer c-info! no-underline!"
+        >隐藏源代码</a>
       </div>
     </div>
   </div>
@@ -36,7 +49,7 @@ const isCodeShow = ref(false);
 }
 
 .demo-render {
-  padding: 20px;
+  padding: 20px 0;
 }
 
 .demo-operators {

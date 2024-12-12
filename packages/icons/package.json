@@ -1,6 +1,6 @@
 {
   "name": "@i-element/icons",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "description": "",
   "keywords": [
     "vue",
@@ -45,6 +45,7 @@
     },
     "./*": "./*",
     "./icons.css": "./dist/icons.css",
-    "./icons.json": "./dist/icons.json"
+    "./icons.json": "./dist/icons.json",
+    "./icons.js": "./dist/icons.js"
   }
 }

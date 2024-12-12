@@ -12,9 +12,13 @@
 
 :::
 
-## 基础用法2
+## 带图标的按钮
 
-111
+:::demo
+
+../demo/button/iconButton.vue
+
+:::
 
 ## [Button Props](../api/interfaces/Button.ButtonProps.md)
 

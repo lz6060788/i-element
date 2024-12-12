@@ -1,6 +1,5 @@
 {
   "name": "i-element",
-  "private": true,
   "scripts": {
     "prepare": "husky install",
     "lint:script": "eslint --ext .js,.jsx,.ts,.tsx,.vue --fix ./",
@@ -12,7 +11,9 @@
     "dev:demo": "pnpm --filter @i-element/demo run dev",
     "dev:docs": "pnpm --filter @i-element/docs run dev",
     "build:docs": "pnpm --filter @i-element/docs run build",
-    "build:ui": "pnpm run type:src && pnpm --filter ./packages/** run build"
+    "build:icons": "pnpm --filter @i-element/icons run build",
+    "build:ui": "pnpm run type:src && pnpm --filter ./packages/** run build",
+    "publish": "pnpm --filter ./packages/** run publish"
   },
   "devDependencies": {
     "@commitlint/cli": "^18.4.0",

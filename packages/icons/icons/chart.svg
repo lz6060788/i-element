@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="16px" height="16px" viewBox="0 0 16 16" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>编组 3</title>
+    <g id="控件" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="图形表格切换/图形" transform="translate(-8, -4)">
+            <g id="编组-3" transform="translate(8.4706, 4)">
+                <rect id="矩形" x="0" y="0" width="15.0588235" height="16"></rect>
+                <path d="M1.88235294,6 L4.23529412,6 L4.23529412,12 L1.88235294,12 Z M6.35294118,1 L8.70588235,1 L8.70588235,12 L6.35294118,12 Z M10.8235294,3 L13.1764706,3 L13.1764706,12 L10.8235294,12 Z M1.41176471,13 L13.6470588,13 L13.6470588,14.5 L1.41176471,14.5 Z" id="形状结合" fill="#255dff" fill-rule="nonzero"></path>
+            </g>
+        </g>
+    </g>
+</svg>

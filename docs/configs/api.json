@@ -3,6 +3,18 @@
     "text": "基础组件",
     "items": [
       {
+        "text": "Theme 主题",
+        "link": "/components/theme"
+      },
+      {
+        "text": "Icon 图标",
+        "link": "/components/icons"
+      },
+      {
+        "text": "ConfigProvider 配置组件",
+        "link": "/components/config-provider"
+      },
+      {
         "text": "Button 按钮",
         "link": "/api/modules/Button",
         "collapsed": true,
@@ -28,16 +40,16 @@
         "collapsed": true,
         "items": [
           {
-            "text": "InputEmits",
-            "link": "/api/interfaces/Input.InputEmits"
-          },
-          {
             "text": "InputExpose",
             "link": "/api/interfaces/Input.InputExpose"
           },
           {
             "text": "InputProps",
             "link": "/api/interfaces/Input.InputProps"
+          },
+          {
+            "text": "InputSlots",
+            "link": "/api/interfaces/Input.InputSlots"
           }
         ]
       }

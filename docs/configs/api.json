@@ -15,17 +15,17 @@
         "link": "/components/config-provider"
       },
       {
-        "text": "Button 按钮",
-        "link": "/api/modules/Button",
+        "text": "Text 文本",
+        "link": "/api/modules/Text",
         "collapsed": true,
         "items": [
           {
-            "text": "ButtonProps",
-            "link": "/api/interfaces/Button.ButtonProps"
+            "text": "TextProps",
+            "link": "/api/interfaces/Text.TextProps"
           },
           {
-            "text": "ButtonSlots",
-            "link": "/api/interfaces/Button.ButtonSlots"
+            "text": "TextSlots",
+            "link": "/api/interfaces/Text.TextSlots"
           }
         ]
       }
@@ -50,6 +50,21 @@
           {
             "text": "InputSlots",
             "link": "/api/interfaces/Input.InputSlots"
+          }
+        ]
+      },
+      {
+        "text": "Button 按钮",
+        "link": "/api/modules/Button",
+        "collapsed": true,
+        "items": [
+          {
+            "text": "ButtonProps",
+            "link": "/api/interfaces/Button.ButtonProps"
+          },
+          {
+            "text": "ButtonSlots",
+            "link": "/api/interfaces/Button.ButtonSlots"
           }
         ]
       }

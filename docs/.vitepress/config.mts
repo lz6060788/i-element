@@ -13,6 +13,7 @@ export default defineConfig({
       md.use(mdPlugin);
     },
   },
+  base: '/i-element/',
   themeConfig: {
     nav: [
       { text: '指南', link: '/guide/' },

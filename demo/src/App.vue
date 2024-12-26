@@ -1,23 +1,17 @@
 <script setup lang="ts">
 import {
-  IText,
+  IPopper,
 } from '@i-element/ui';
 </script>
 
 <template>
   <div class="demo">
-    <IText
-      type="primary"
-      prefix-icon="i-icon-back"
+    <i-popper
+      content="test"
+      arrow
     >
-      点击返回
-    </IText>
-    <IText
-      type="primary"
-      suffix-icon="i-icon-download"
-    >
-      点击下载
-    </IText>
+      <span>123123</span>
+    </i-popper>
   </div>
 </template>
 

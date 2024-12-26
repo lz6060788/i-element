@@ -1,0 +1,28 @@
+.i-popper {
+  &-wrapper {
+    width: fit-content;
+  }
+
+  .popper {
+    z-index: v-bind(--i-popper-zindex);
+    padding: var(--i-popper-padding);
+    color: var(--i-popper-color);
+    background: var(--i-popper-background-color);
+    border-color: var(--i-popper-border-color);
+    border-style: var(--i-popper-border-style);
+    border-width: var(--i-popper-border-width);
+    border-radius: var(--i-popper-border-radius);
+    box-shadow: var(--i-popper-box-shadow);
+    transition: background 250ms ease-in-out;
+  }
+}
+
+.fade-enter-active,
+.fade-leave-active {
+  transition: opacity 0.2s ease;
+}
+
+.fade-enter-from,
+.fade-leave-to {
+  opacity: 0;
+}

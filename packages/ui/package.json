@@ -52,6 +52,7 @@
     "@i-element/config-provider": "workspace:^",
     "@i-element/input": "workspace:^",
     "@i-element/shared": "workspace:^",
-    "@i-element/styles": "workspace:^"
+    "@i-element/styles": "workspace:^",
+    "@i-element/popper": "workspace:^"
   }
 }

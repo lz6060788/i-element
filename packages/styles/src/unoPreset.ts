@@ -7,6 +7,7 @@ import {
   buttonConfig,
   inputConfig,
   textConfig,
+  popperConfig,
 } from './unocss';
 
 /** 组件名称与预设对象的关系表 */
@@ -15,6 +16,7 @@ const configMaps = {
   button: buttonConfig,
   input: inputConfig,
   text: textConfig,
+  popper: popperConfig,
 } satisfies Record<string, UserConfig<Theme>>;
 
 type ConfigKeys = keyof typeof configMaps;

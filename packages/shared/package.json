@@ -19,5 +19,7 @@
     "registry": "https://registry.npmjs.org",
     "access": "public"
   },
-  "dependencies": {}
+  "dependencies": {
+    "@popperjs/core": "^2.11.8"
+  }
 }

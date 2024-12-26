@@ -74,6 +74,8 @@ module.exports = defineConfig({
 
     // 换行符不作约束
     'linebreak-style': 'off',
+    // 箭头函数不需要return
+    'consistent-return': 'off',
   },
 
   // 文件级别的重写

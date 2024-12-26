@@ -8,6 +8,12 @@ importers:
 
   .:
     dependencies:
+      '@popperjs/core':
+        specifier: ^2.11.8
+        version: 2.11.8
+      debounce:
+        specifier: ^2.2.0
+        version: 2.2.0
       vue:
         specifier: ^3.4.15
         version: 3.4.21(typescript@5.4.3)
@@ -203,7 +209,26 @@ importers:
         specifier: '>=3.0.0'
         version: 3.4.21(typescript@5.4.3)
 
-  packages/shared: {}
+  packages/popper:
+    dependencies:
+      '@i-element/shared':
+        specifier: workspace:^
+        version: link:../shared
+      '@popperjs/core':
+        specifier: ^2.11.8
+        version: 2.11.8
+      debounce:
+        specifier: ^2.2.0
+        version: 2.2.0
+      vue:
+        specifier: '>=3.0.0'
+        version: 3.4.21(typescript@5.4.3)
+
+  packages/shared:
+    dependencies:
+      '@popperjs/core':
+        specifier: ^2.11.8
+        version: 2.11.8
 
   packages/styles:
     dependencies:
@@ -804,6 +829,9 @@ packages:
 
   '@polka/url@1.0.0-next.25':
     resolution: {integrity: sha512-j7P6Rgr3mmtdkeDGTe0E/aYyWEWVtc5yFXtHCRHs28/jptDEWfaVOc5T7cblqy1XKPPfCxJc/8DwQ5YgLOZOVQ==}
+
+  '@popperjs/core@2.11.8':
+    resolution: {integrity: sha512-P1st0aksCrn9sGZhp8GMYwBnQsbvAWsZAX44oXNNvLHGqAOcoVxmjZiohstwQ7SqKnbR47akdNi+uleWD8+g6A==}
 
   '@rollup/plugin-replace@5.0.5':
     resolution: {integrity: sha512-rYO4fOi8lMaTg/z5Jb+hKnrHHVn8j2lwkqwyS4kTRhKyWOLf2wST2sWXr4WzWiTcoHTp2sTjqUbqIj2E39slKQ==}
@@ -1459,6 +1487,10 @@ packages:
 
   de-indent@1.0.2:
     resolution: {integrity: sha512-e/1zu3xH5MQryN2zdVaF0OrdNLUbvWxzMbi+iNA6Bky7l1RoP8a2fIbRocyHclXt/arDrrR6lL3TqFD9pMQTsg==}
+
+  debounce@2.2.0:
+    resolution: {integrity: sha512-Xks6RUDLZFdz8LIdR6q0MTH44k7FikOmnh5xkSjMig6ch45afc8sjTjRQf3P6ax8dMgcQrYO/AR2RGWURrruqw==}
+    engines: {node: '>=18'}
 
   debug@3.2.7:
     resolution: {integrity: sha512-CFjzYYAi4ThfiQvizrFQevTTXHtnCqWfe7x1AhgEscTz6ZbLbfoLRLPugTQyBth6f8ZERVUSyWHFD/7Wu4t1XQ==}
@@ -4100,6 +4132,8 @@ snapshots:
 
   '@polka/url@1.0.0-next.25': {}
 
+  '@popperjs/core@2.11.8': {}
+
   '@rollup/plugin-replace@5.0.5(rollup@3.29.4)':
     dependencies:
       '@rollup/pluginutils': 5.1.0(rollup@3.29.4)
@@ -4895,6 +4929,8 @@ snapshots:
       is-data-view: 1.0.1
 
   de-indent@1.0.2: {}
+
+  debounce@2.2.0: {}
 
   debug@3.2.7:
     dependencies:

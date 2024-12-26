@@ -1,0 +1,40 @@
+{
+  "name": "@i-element/popper",
+  "version": "0.0.1",
+  "description": "",
+  "keywords": [
+    "vue",
+    "ui",
+    "component library"
+  ],
+  "author": "irises",
+  "license": "MIT",
+  "homepage": "",
+  "repository": {
+    "type": "git",
+    "url": ""
+  },
+  "bugs": {
+    "url": ""
+  },
+  "scripts": {
+    "build": "vite build",
+    "test": "echo test"
+  },
+  "files": [
+    "dist",
+    "README.md"
+  ],
+  "publishConfig": {
+    "registry": "https://registry.npmjs.org",
+    "access": "public"
+  },
+  "peerDependencies": {
+    "vue": ">=3.0.0"
+  },
+  "dependencies": {
+    "@i-element/shared": "workspace:^",
+    "@popperjs/core": "^2.11.8",
+    "debounce": "^2.2.0"
+  }
+}

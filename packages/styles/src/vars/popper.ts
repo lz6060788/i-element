@@ -9,6 +9,7 @@ export const popperVars = {
   'popper-border-style': 'solid',
   'popper-border-width': '1px',
   'popper-padding': '8px',
+  'popper-fontsize': '12px',
 };
 
 /** 浮层组件主题变量类型 */

@@ -1,11 +1,14 @@
 .i-popper {
+  width: fit-content;
+
   &-wrapper {
     width: fit-content;
   }
 
-  .popper {
+  &-inner {
     z-index: v-bind(--i-popper-zindex);
     padding: var(--i-popper-padding);
+    font-size: var(--i-popper-fontsize);
     color: var(--i-popper-color);
     background: var(--i-popper-background-color);
     border-color: var(--i-popper-border-color);
@@ -14,6 +17,87 @@
     border-radius: var(--i-popper-border-radius);
     box-shadow: var(--i-popper-box-shadow);
     transition: background 250ms ease-in-out;
+
+    &-arrow {
+      position: absolute;
+      box-sizing: border-box;
+      width: calc(10px - var(--i-popper-border-width, 0px));
+      height: calc(10px - var(--i-popper-border-width, 0px));
+      background: var(--i-popper-background-color);
+      transition: background 250ms ease-in-out;
+
+      &::before {
+        position: absolute;
+        box-sizing: border-box;
+        width: calc(10px - var(--i-popper-border-width, 0px));
+        height: calc(10px - var(--i-popper-border-width, 0px));
+        visibility: visible;
+        content: "";
+        background: var(--i-popper-background-color);
+        transition: background 250ms ease-in-out;
+        transform: rotate(45deg);
+      }
+    }
+
+    &[data-popper-placement^="top"] {
+      .i-popper-inner-arrow {
+        bottom: -5px;
+
+        &::before {
+          border-right:
+            var(--i-popper-border-width)
+            var(--i-popper-border-style) var(--i-popper-border-color);
+          border-bottom:
+            var(--i-popper-border-width)
+            var(--i-popper-border-style) var(--i-popper-border-color);
+        }
+      }
+    }
+
+    &[data-popper-placement^="bottom"] {
+      .i-popper-inner-arrow {
+        top: -5px;
+
+        &::before {
+          border-top:
+            var(--i-popper-border-width)
+            var(--i-popper-border-style) var(--i-popper-border-color);
+          border-left:
+            var(--i-popper-border-width)
+            var(--i-popper-border-style) var(--i-popper-border-color);
+        }
+      }
+    }
+
+    &[data-popper-placement^="left"] {
+      .i-popper-inner-arrow {
+        right: -5px;
+
+        &::before {
+          border-top:
+            var(--i-popper-border-width)
+            var(--i-popper-border-style) var(--i-popper-border-color);
+          border-right:
+            var(--i-popper-border-width)
+            var(--i-popper-border-style) var(--i-popper-border-color);
+        }
+      }
+    }
+
+    &[data-popper-placement^="right"] {
+      .i-popper-inner-arrow {
+        left: -5px;
+
+        &::before {
+          border-bottom:
+            var(--i-popper-border-width)
+            var(--i-popper-border-style) var(--i-popper-border-color);
+          border-left:
+            var(--i-popper-border-width)
+            var(--i-popper-border-style) var(--i-popper-border-color);
+        }
+      }
+    }
   }
 }
 

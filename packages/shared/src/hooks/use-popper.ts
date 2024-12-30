@@ -1,12 +1,9 @@
 import {
   toRefs, watch, nextTick, onBeforeUnmount, reactive, Ref,
 } from 'vue';
-import { createPopper, Instance } from '@popperjs/core/lib/popper-lite';
-import preventOverflow from '@popperjs/core/lib/modifiers/preventOverflow';
-import flip from '@popperjs/core/lib/modifiers/flip';
-import offset from '@popperjs/core/lib/modifiers/offset';
-import arrow from '@popperjs/core/lib/modifiers/arrow';
-import { Placement } from '@popperjs/core';
+import {
+  Placement, createPopper, Instance, preventOverflow, flip, offset, arrow,
+} from '@popperjs/core';
 
 const toInt = (x: string) => parseInt(x, 10);
 

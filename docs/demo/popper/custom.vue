@@ -10,12 +10,11 @@ import {
   <div class="demo">
     <i-popper
       arrow
-      content="悬浮触发"
       placement="right-start"
     >
       <template #content>
         <div class="content">
-          <p>这是一段描述占位符</p>
+          <span>这是一段描述占位符</span>
           <div class="footer">
             <i-button>关闭</i-button>
           </div>
@@ -30,6 +29,8 @@ import {
 
 <style lang="scss" scoped>
 .demo {
+  display: flex;
+  justify-content: center;
   width: 100%;
   padding: 24px;
 

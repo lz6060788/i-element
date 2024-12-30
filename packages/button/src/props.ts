@@ -28,19 +28,19 @@ export interface ButtonProps {
    * 是否加载中
    * @default false
    */
-  loading: boolean,
+  loading?: boolean,
 
   /**
    * 自定义标签
    * @default 'button'
    */
-  tag: string,
+  tag?: string,
 
   /**
    * 大小
    * @default false
    */
-  size: ButtonSize,
+  size?: ButtonSize,
 
   /**
    * 图标

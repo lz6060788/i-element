@@ -1,7 +1,6 @@
 <template>
   <div
     ref="popperContainerNode"
-    class="inline-block"
     :class="[
       ns.b()
     ]"
@@ -25,7 +24,9 @@
       <div
         v-show="shouldShowPopper"
         ref="popperNode"
-        class="popper"
+        :class="[
+          ns.b('inner')
+        ]"
         :style="{
           '--i-popper-zindex': zIndex
         }"
@@ -136,7 +137,6 @@ const openPopperDebounce = debounce(open, +openDelay.value);
 const closePopperDebounce = debounce(close, +closeDelay.value);
 
 const openPopper = async () => {
-  console.log('open');
   if (invalid.value || manualMode.value) {
     return;
   }

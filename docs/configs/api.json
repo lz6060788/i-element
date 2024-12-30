@@ -69,5 +69,29 @@
         ]
       }
     ]
+  },
+  {
+    "text": "交互组件",
+    "items": [
+      {
+        "text": "Popper 浮层",
+        "link": "/api/modules/Popper",
+        "collapsed": true,
+        "items": [
+          {
+            "text": "PopperExpose",
+            "link": "/api/interfaces/Popper.PopperExpose"
+          },
+          {
+            "text": "PopperProps",
+            "link": "/api/interfaces/Popper.PopperProps"
+          },
+          {
+            "text": "PopperSlots",
+            "link": "/api/interfaces/Popper.PopperSlots"
+          }
+        ]
+      }
+    ]
   }
 ]

@@ -32,5 +32,14 @@
         "link": "/components/button"
       }
     ]
+  },
+  {
+    "text": "交互组件",
+    "items": [
+      {
+        "text": "Popper 浮层",
+        "link": "/components/popper"
+      }
+    ]
   }
 ]

@@ -3,13 +3,19 @@ import { InferVueDefaults } from '@i-element/shared';
 import { Placement } from '@popperjs/core';
 import type Popper from './popper.vue';
 
+type Prettier<T> = {
+  [key in keyof T]: T[key]
+};
+
+type PopperPlacement = Prettier<Placement>;
+
 /** 浮层组件的属性 */
 export interface PopperProps {
   /**
    * 弹出位置
    * @default bottom
    */
-  placement?: Placement;
+  placement?: PopperPlacement;
   /**
    * 禁用点击区域外关闭
    * @default false
@@ -72,7 +78,7 @@ export interface PopperProps {
   interactive?: boolean;
   /**
    * 是否锁定位置
-   * @default false
+   * @default true
    */
   locked?: boolean;
   /**
@@ -83,7 +89,7 @@ export interface PopperProps {
 }
 
 /** @hidden */
-export function defaultPopperProps(): Required<InferVueDefaults<PopperProps>> {
+export function defaultPopperProps() {
   return {
     placement: 'bottom',
     disableClickAway: false,
@@ -100,7 +106,7 @@ export function defaultPopperProps(): Required<InferVueDefaults<PopperProps>> {
     interactive: true,
     locked: true,
     content: null,
-  };
+  } satisfies Required<InferVueDefaults<PopperProps>>;
 }
 
 /** 浮层组件的事件 */

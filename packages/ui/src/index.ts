@@ -5,3 +5,4 @@ export * from '@i-element/shared';
 export * from '@i-element/styles';
 export * from '@i-element/config-provider';
 export * from '@i-element/popper';
+export * from '@i-element/popconfirm';

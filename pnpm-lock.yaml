@@ -223,6 +223,12 @@ importers:
 
   packages/popconfirm:
     dependencies:
+      '@i-element/button':
+        specifier: workspace:^
+        version: link:../button
+      '@i-element/popper':
+        specifier: workspace:^
+        version: link:../popper
       '@i-element/shared':
         specifier: workspace:^
         version: link:../shared
@@ -286,6 +292,9 @@ importers:
       '@i-element/input':
         specifier: workspace:^
         version: link:../input
+      '@i-element/popconfirm':
+        specifier: workspace:^
+        version: link:../popconfirm
       '@i-element/popper':
         specifier: workspace:^
         version: link:../popper

@@ -1,30 +1,23 @@
 <script setup lang="ts">
 import {
-  IPopper,
-  IText,
-  IButton,
+  IPopconfirm,
 } from '@i-element/ui';
 </script>
 
 <template>
   <div class="demo">
-    <i-popper
+    <i-popconfirm
       arrow
       content="悬浮触发"
       placement="right-start"
     >
       <template #content>
         <div class="content">
-          <p>这是一段描述占位符</p>
-          <div class="footer">
-            <i-button>关闭</i-button>
-          </div>
+          <p>这是一段描述占位符1111</p>
         </div>
       </template>
-      <i-text type="primary">
-        slot渲染
-      </i-text>
-    </i-popper>
+      测试
+    </i-popconfirm>
   </div>
 </template>
 

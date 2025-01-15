@@ -1,0 +1,14 @@
+.i-popconfirm {
+  .content {
+    .footer {
+      display: flex;
+      align-items: center;
+      justify-content: end;
+      margin-top: 16px;
+    }
+  }
+
+  &-btn-cancel {
+    margin-left: 4px;
+  }
+}

@@ -1,0 +1,10 @@
+export declare const indexFileName: () => string;
+export declare const styleFileName: (componentName: string) => string;
+export declare const vueFileName: (componentName: string) => string;
+export declare const propsFileName: () => string;
+export declare const indexFile: (prefix: string, componentName: string) => string;
+export declare const styleFile: (prefix: string, componentName: string) => string;
+export declare const vueFile: (prefix: string, componentName: string) => string;
+export declare const propsFile: (prefix: string, componentName: string, cnName: string) => string;
+export declare const packageJsonFile: (prefix: string, componentName: string) => string;
+export declare const viteConfigFile: () => string;

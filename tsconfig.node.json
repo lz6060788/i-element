@@ -18,7 +18,8 @@
     "packages/build/src",
     "packages/styles/src/unoPreset.ts",
     "packages/styles/src/unocss",
-    "packages/icons/src"
+    "packages/icons/src",
+    "packages/cli/plugin"
   ],
   "exclude": [
     // 暂时先排除产物目录，packages/xxx/dist/x.config.js 或者 node_modules/pkg/x.config.js 不会被包含进来

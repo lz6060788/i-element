@@ -1,0 +1,28 @@
+{
+  "name": "@i-element/cli",
+  "description": "description",
+  "authors": "author",
+  "version": "1.0.0",
+  "scripts": {
+    "build": "vite build",
+    "test": "echo test"
+  },
+  "bin": {
+    "nb-cli": "./bin/i-element-cli.mjs"
+  },
+  "dependencies": {
+    "@types/yargs": "^17.0.33",
+    "yargs": "^17.7.2"
+  },
+  "module": "./bin/i-element-cli.mjs",
+  "types": "./bin/src/index.d.ts",
+  "exports": {
+    ".": {
+      "require": "./bin/i-element-cli.umd.js",
+      "import": "./bin/i-element-cli.mjs",
+      "types": "./bin/src/index.d.ts"
+    },
+    "./*": "./*"
+  },
+  "main": "./bin/i-element-cli.umd.js"
+}

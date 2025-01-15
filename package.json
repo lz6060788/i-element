@@ -13,11 +13,13 @@
     "build:docs": "pnpm --filter @i-element/docs run build",
     "build:icons": "pnpm --filter @i-element/icons run build",
     "build:ui": "pnpm run type:src && pnpm --filter ./packages/** run build",
-    "publish": "pnpm --filter ./packages/** run publish"
+    "publish": "pnpm --filter ./packages/** run publish",
+    "build:cli": "pnpm --filter @i-element/cli run build && pnpm -wD install ./packages/cli"
   },
   "devDependencies": {
     "@commitlint/cli": "^18.4.0",
     "@commitlint/config-conventional": "^18.4.0",
+    "@i-element/cli": "link:packages\\cli",
     "@types/node": "^20.8.10",
     "@typescript-eslint/eslint-plugin": "^6.10.0",
     "@typescript-eslint/parser": "^6.10.0",

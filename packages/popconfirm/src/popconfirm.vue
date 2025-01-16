@@ -77,7 +77,7 @@ const show = ref(false);
 const _popperProps = computed(() => ({
   ...props,
   hover: false,
-  show,
+  show: show.value,
 }));
 
 const _confirmButtonProps = computed(() => props.confirmButtonProps || {});

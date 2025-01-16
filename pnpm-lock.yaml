@@ -232,9 +232,6 @@ importers:
       '@i-element/shared':
         specifier: workspace:^
         version: link:../shared
-      debounce:
-        specifier: ^2.2.0
-        version: 2.2.0
       vue:
         specifier: '>=3.0.0'
         version: 3.4.21(typescript@5.4.3)
@@ -304,6 +301,9 @@ importers:
       '@i-element/styles':
         specifier: workspace:^
         version: link:../styles
+      '@i-element/text':
+        specifier: workspace:^
+        version: link:../text
       vue:
         specifier: '>=3.0.0'
         version: 3.4.21(typescript@5.4.3)

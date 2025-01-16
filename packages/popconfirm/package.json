@@ -36,5 +36,17 @@
     "@i-element/shared": "workspace:^",
     "@i-element/popper": "workspace:^",
     "@i-element/button": "workspace:^"
+  },
+  "main": "./dist/i-element-popconfirm.umd.js",
+  "module": "./dist/i-element-popconfirm.mjs",
+  "types": "./dist/src/index.d.ts",
+  "exports": {
+    ".": {
+      "require": "./dist/i-element-popconfirm.umd.js",
+      "import": "./dist/i-element-popconfirm.mjs",
+      "types": "./dist/src/index.d.ts"
+    },
+    "./*": "./*",
+    "./style.css": "./dist/style.css"
   }
 }

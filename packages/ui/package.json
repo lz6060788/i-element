@@ -51,6 +51,7 @@
     "@i-element/button": "workspace:^",
     "@i-element/config-provider": "workspace:^",
     "@i-element/input": "workspace:^",
+    "@i-element/text": "workspace:^",
     "@i-element/shared": "workspace:^",
     "@i-element/styles": "workspace:^",
     "@i-element/popper": "workspace:^",

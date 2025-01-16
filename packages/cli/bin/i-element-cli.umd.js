@@ -28,10 +28,23 @@ export * from './props';
 </template>
 
 <script setup lang="ts">
-<\/script>
+import { useNamespace } from '@i-element/shared';
+import {
+  default${stringToUpCase(componentName)}Props,
+  ${stringToUpCase(componentName)}Props,
+  ${stringToUpCase(componentName)}Slots,
+  ${stringToUpCase(componentName)}Emits,
+} from './props';
 
-<style scoped lang="scss">
-</style>
+const emit = defineEmits<t${stringToUpCase(componentName)}Emits>();
+const slots = defineSlots<t${stringToUpCase(componentName)}Slots>();
+const props = withDefaults(
+  defineProps<t${stringToUpCase(componentName)}Props>(),
+  defaultt${stringToUpCase(componentName)}Props(),
+);
+
+const ns = useNamespace('${componentName}');
+<\/script>
 `;
   const propsFile = (prefix, componentName, cnName) => `/** @module ${stringToUpCase(componentName)} */
 import { InferVueDefaults } from '@i-element/shared';

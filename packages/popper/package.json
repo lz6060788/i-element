@@ -36,5 +36,17 @@
     "@i-element/shared": "workspace:^",
     "@popperjs/core": "^2.11.8",
     "debounce": "^2.2.0"
+  },
+  "main": "./dist/i-element-popper.umd.js",
+  "module": "./dist/i-element-popper.mjs",
+  "types": "./dist/src/index.d.ts",
+  "exports": {
+    ".": {
+      "require": "./dist/i-element-popper.umd.js",
+      "import": "./dist/i-element-popper.mjs",
+      "types": "./dist/src/index.d.ts"
+    },
+    "./*": "./*",
+    "./style.css": "./dist/style.css"
   }
 }

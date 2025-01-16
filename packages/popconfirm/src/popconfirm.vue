@@ -84,7 +84,6 @@ const _confirmButtonProps = computed(() => props.confirmButtonProps || {});
 const _cancelButtonProps = computed(() => props.cancelButtonProps || {});
 
 function clickHandle(e: MouseEvent) {
-  console.log(e);
   show.value = true;
   emit('click', e);
 }

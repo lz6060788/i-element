@@ -89,7 +89,10 @@ function clickHandle(e: MouseEvent) {
 }
 
 function confirmHandle(e: MouseEvent) {
-  emit('confirm', e);
+  emit('confirm', e, close);
+  if (props.closeAfterConfirm) {
+    close();
+  }
 }
 
 function cancelHandle(e: MouseEvent) {

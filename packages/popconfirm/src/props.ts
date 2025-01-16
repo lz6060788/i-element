@@ -37,6 +37,11 @@ export interface PopconfirmProps extends Omit<PopperProps, 'hover' | 'show'> {
    * @default 参考button属性
    */
   cancelButtonProps?: ButtonProps | null;
+  /**
+   * 点击确认后消失
+   * @default true
+   */
+  closeAfterConfirm?: true
 }
 
 /** @hidden */
@@ -49,13 +54,14 @@ export function defaultPopconfirmProps() {
     cancelBtnText: '取消',
     confirmButtonProps: null,
     cancelButtonProps: null,
+    closeAfterConfirm: true,
   } satisfies Required<InferVueDefaults<PopconfirmProps>>;
 }
 
 /** 气泡确认框组件的事件 */
 export type PopconfirmEmits = {
   click: [value: MouseEvent];
-  confirm: [value: MouseEvent];
+  confirm: [value: MouseEvent, value: PopconfirmExpose['close']];
   cancel: [value: MouseEvent];
 } & PopperEmits;
 

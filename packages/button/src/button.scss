@@ -7,13 +7,13 @@ $button-size: small, medium, large;
     --i-button-border-color: rgb(var(--i-color-blue2));
     --i-button-background-color: rgb(var(--i-color-blue1));
 
-    &:hover:not(.is-disabled) {
+    &:hover:not(.is-disabled, .is-loading) {
       --i-button-color__hover: rgb(var(--i-color-font5));
       --i-button-border-color__hover: rgb(var(--i-color-blue2));
       --i-button-background-color__hover: rgb(var(--i-color-blue2));
     }
 
-    &:active:not(.is-disabled) {
+    &:active:not(.is-disabled, .is-loading) {
       --i-button-color__active: rgb(var(--i-color-font5));
       --i-button-border-color__active: rgb(var(--i-color-blue3));
       --i-button-background-color__active: rgb(var(--i-color-blue3));
@@ -43,7 +43,8 @@ $button-size: small, medium, large;
       --i-button-background-color__active: rgb(var(--i-color-green3));
     }
 
-    &.is-disabled {
+    &.is-disabled,
+    &.is-loading {
       --i-button-color__disabled: rgb(var(--i-color-font8));
       --i-button-border-color__disabled: rgb(var(--i-color-green5));
       --i-button-background-color__disabled: rgb(var(--i-color-green4));
@@ -67,7 +68,8 @@ $button-size: small, medium, large;
       --i-button-background-color__active: rgb(var(--i-color-red3));
     }
 
-    &.is-disabled {
+    &.is-disabled,
+    &.is-loading {
       --i-button-color__disabled: rgb(var(--i-color-font8));
       --i-button-border-color__disabled: rgb(var(--i-color-red5));
       --i-button-background-color__disabled: rgb(var(--i-color-red4));
@@ -91,7 +93,8 @@ $button-size: small, medium, large;
       --i-button-background-color__active: rgb(var(--i-color-orange3));
     }
 
-    &.is-disabled {
+    &.is-disabled,
+    &.is-loading {
       --i-button-color__disabled: rgb(var(--i-color-font8));
       --i-button-border-color__disabled: rgb(var(--i-color-orange5));
       --i-button-background-color__disabled: rgb(var(--i-color-orange4));
@@ -127,19 +130,20 @@ $button-size: small, medium, large;
   border-width: 1px;
   outline: none;
 
-  &:hover:not(.is-disabled) {
+  &:hover:not(.is-disabled, .is-loading) {
     color: var(--i-button-color__hover);
     background-color: var(--i-button-background-color__hover);
     border-color: var(--i-button-border-color__hover);
   }
 
-  &:active:not(.is-disabled) {
+  &:active:not(.is-disabled, .is-loading) {
     color: var(--i-button-color__active);
     background-color: var(--i-button-background-color__active);
     border-color: var(--i-button-border-color__active);
   }
 
-  &.is-disabled {
+  &.is-disabled,
+  &.is-loading {
     color: var(--i-button-color__disabled);
     cursor: not-allowed;
     background-color: var(--i-button-background-color__disabled);

@@ -12,15 +12,19 @@
     ]"
     @click="handleClick"
   >
-    <template v-if="icon || $slots.icon">
+    <template v-if="icon || $slots.icon || loading">
       <span
         v-if="icon"
         :class="[`i-icon-${icon}`, ns.e('icon')]"
       />
       <slot
-        v-else
+        v-else-if="$slots.icon"
         name="icon"
         :class="[ns.e('icon')]"
+      />
+      <span
+        v-else
+        :class="[`i-icon-loading`, ns.e('icon')]"
       />
     </template>
     <span

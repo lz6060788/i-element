@@ -29,10 +29,23 @@ export const vueFile = (prefix: string, componentName: string) => `<template>
 </template>
 
 <script setup lang="ts">
-</script>
+import { useNamespace } from '@i-element/shared';
+import {
+  default${stringToUpCase(componentName)}Props,
+  ${stringToUpCase(componentName)}Props,
+  ${stringToUpCase(componentName)}Slots,
+  ${stringToUpCase(componentName)}Emits,
+} from './props';
 
-<style scoped lang="scss">
-</style>
+const emit = defineEmits<t${stringToUpCase(componentName)}Emits>();
+const slots = defineSlots<t${stringToUpCase(componentName)}Slots>();
+const props = withDefaults(
+  defineProps<t${stringToUpCase(componentName)}Props>(),
+  defaultt${stringToUpCase(componentName)}Props(),
+);
+
+const ns = useNamespace('${componentName}');
+</script>
 `;
 
 export const propsFile = (prefix: string, componentName: string, cnName: string) => `/** @module ${stringToUpCase(componentName)} */

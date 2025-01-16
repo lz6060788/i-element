@@ -51,6 +51,9 @@ export interface GenerateIconifyOptions {
 
   /** 生成的 js 文件的路径，内容为图标名集合 */
   jsOutput?: string;
+
+  /** 是否抹除颜色设置为currentColor */
+  replaceColor?: boolean
 }
 
 /** 指定一系列 svg 图标，生成 iconify 规范的 json 文件以及对应的图标 css 文件 */
@@ -63,6 +66,7 @@ export async function generateIconify(options: GenerateIconifyOptions = {}) {
     cssOutput = '',
     jsonOutput = absCwd(iconsDir, 'icons.json'),
     jsOutput = '',
+    replaceColor = true,
   } = options;
 
   const { log } = console;
@@ -91,10 +95,12 @@ export async function generateIconify(options: GenerateIconifyOptions = {}) {
 
       // Assume icon is monotone: replace color with currentColor, add if missing
       // If icon is not monotone, remove this code
-      await parseColors(svg, {
-        defaultColor: 'currentColor',
-        callback: (_attr, colorStr, color) => (!color || isEmptyColor(color) ? colorStr : 'currentColor'),
-      });
+      if (replaceColor) {
+        await parseColors(svg, {
+          defaultColor: 'currentColor',
+          callback: (_attr, colorStr, color) => (!color || isEmptyColor(color) ? colorStr : 'currentColor'),
+        });
+      }
 
       // Optimise
       await runSVGO(svg);

@@ -46,6 +46,9 @@
     "./*": "./*",
     "./icons.css": "./dist/icons.css",
     "./icons.json": "./dist/icons.json",
-    "./icons.js": "./dist/icons.js"
+    "./icons.js": "./dist/icons.js",
+    "./icons-fill.css": "./dist/icons-fill.css",
+    "./icons-fill.json": "./dist/icons-fill.json",
+    "./icons-fill.js": "./dist/icons-fill.js"
   }
 }

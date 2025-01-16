@@ -10,7 +10,8 @@ export default <UserConfig>defineConfig({
     presetIcons({
       collections: {
         // Iconify json 集成，后续支持通过 <i class="i-icon-xxx"> 来使用图标原子类，并支持按需打包
-        icon: () => import('./packages/icons/dist/icons.json').then((i) => i.default),
+        icon: async () => import('./packages/icons/dist/icons.json').then((i) => i.default),
+        'icon-fill': async () => import('./packages/icons/dist/icons-fill.json').then((i) => i.default),
       },
     }),
     iElementPreset(),

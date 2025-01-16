@@ -9,8 +9,10 @@ const OUT_REL = 'dist';
 /** icons 图标集合相对路径 */
 const ICONS_REL = 'icons';
 
-/** 生成的产物文件名称 */
+/** 抹除颜色的产物名称 */
 const FILE_NAME = 'icons';
+/** 具有颜色的产物名称 */
+const FILLED_FILE_NAME = 'icons-fill';
 
 export default generateConfig({
   outDir: OUT_REL,
@@ -20,6 +22,10 @@ export default generateConfig({
       [`./${FILE_NAME}.css`]: relCwd(absCwd(options.outDir, `${FILE_NAME}.css`), false),
       [`./${FILE_NAME}.json`]: relCwd(absCwd(options.outDir, `${FILE_NAME}.json`), false),
       [`./${FILE_NAME}.js`]: relCwd(absCwd(options.outDir, `${FILE_NAME}.js`), false),
+      // 具有颜色的部分
+      [`./${FILLED_FILE_NAME}.css`]: relCwd(absCwd(options.outDir, `${FILLED_FILE_NAME}.css`), false),
+      [`./${FILLED_FILE_NAME}.json`]: relCwd(absCwd(options.outDir, `${FILLED_FILE_NAME}.json`), false),
+      [`./${FILLED_FILE_NAME}.js`]: relCwd(absCwd(options.outDir, `${FILLED_FILE_NAME}.js`), false),
     };
     Object.assign(
       pkg.exports as Record<string, any>,
@@ -44,6 +50,14 @@ function pluginGenerateIconify(): PluginOption {
         cssOutput: absCwd(OUT_REL, `${FILE_NAME}.css`),
         jsonOutput: absCwd(OUT_REL, `${FILE_NAME}.json`),
         jsOutput: absCwd(OUT_REL, `${FILE_NAME}.js`),
+      });
+      await generateIconify({
+        iconsDir: absCwd(ICONS_REL),
+        prefix: 'icon-fill',
+        cssOutput: absCwd(OUT_REL, `${FILLED_FILE_NAME}.css`),
+        jsonOutput: absCwd(OUT_REL, `${FILLED_FILE_NAME}.json`),
+        jsOutput: absCwd(OUT_REL, `${FILLED_FILE_NAME}.js`),
+        replaceColor: false,
       });
     },
   };

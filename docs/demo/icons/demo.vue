@@ -5,7 +5,7 @@ const list = ['i-icon-account', 'i-icon-add', 'i-icon-arrow', 'i-icon-back', 'i-
   'i-icon-fresh', 'i-icon-help', 'i-icon-info-fill', 'i-icon-info', 'i-icon-keyboard', 'i-icon-light',
   'i-icon-list', 'i-icon-little-triangle', 'i-icon-lock-off', 'i-icon-lock-on', 'i-icon-more', 'i-icon-password', 'i-icon-plus', 'i-icon-question',
   'i-icon-remove', 'i-icon-right', 'i-icon-setting', 'i-icon-slider', 'i-icon-strategy', 'i-icon-success-fill',
-  'i-icon-success', 'i-icon-switch', 'i-icon-table', 'i-icon-top', 'i-icon-trend', 'i-icon-trush', 'i-icon-up', 'i-icon-warning',
+  'i-icon-success', 'i-icon-switch', 'i-icon-table', 'i-icon-top', 'i-icon-trend', 'i-icon-trush', 'i-icon-up', 'i-icon-warning', 'i-icon-loading',
 ];
 
 const largeList = ['i-icon-operate-buy', 'i-icon-operate-position', 'i-icon-operate-sale'];

@@ -91,6 +91,25 @@
             "link": "/api/interfaces/Popper.PopperSlots"
           }
         ]
+      },
+      {
+        "text": "Popconfirm 气泡确认框",
+        "link": "/api/modules/Popconfirm",
+        "collapsed": true,
+        "items": [
+          {
+            "text": "PopconfirmExpose",
+            "link": "/api/interfaces/Popconfirm.PopconfirmExpose"
+          },
+          {
+            "text": "PopconfirmProps",
+            "link": "/api/interfaces/Popconfirm.PopconfirmProps"
+          },
+          {
+            "text": "PopconfirmSlots",
+            "link": "/api/interfaces/Popconfirm.PopconfirmSlots"
+          }
+        ]
       }
     ]
   }

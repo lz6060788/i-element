@@ -23,7 +23,6 @@
                 ns.b('btn-confirm')
               ]"
               type="primary"
-              :loading="props.confirmBtnLoading"
               v-bind="_confirmButtonProps"
               @click="confirmHandle"
             >

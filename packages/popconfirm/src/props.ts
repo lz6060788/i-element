@@ -18,11 +18,6 @@ export interface PopconfirmProps extends Omit<PopperProps, 'hover' | 'show'> {
    */
   confirmBtnText?: string;
   /**
-   * 确定按钮是否loading
-   * @default false
-   */
-  confirmBtnLoading?: boolean;
-  /**
    * 展示取消按钮
    * @default true
    */
@@ -34,12 +29,12 @@ export interface PopconfirmProps extends Omit<PopperProps, 'hover' | 'show'> {
   cancelBtnText?: string;
   /**
    * 确认按钮属性
-   * @default InferVueDefaults<PopconfirmProps>
+   * @default 参考button属性
    */
   confirmButtonProps?: ButtonProps | null;
   /**
    * 取消按钮属性
-   * @default InferVueDefaults<PopconfirmProps>
+   * @default 参考button属性
    */
   cancelButtonProps?: ButtonProps | null;
 }
@@ -50,7 +45,6 @@ export function defaultPopconfirmProps() {
     ...defaultPopperProps(),
     showConfirmBtn: true,
     confirmBtnText: '确定',
-    confirmBtnLoading: false,
     showCancelBtn: true,
     cancelBtnText: '取消',
     confirmButtonProps: null,

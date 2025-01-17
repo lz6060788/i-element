@@ -37,10 +37,10 @@ import {
   ${stringToUpCase(componentName)}Emits,
 } from './props';
 
-const emit = defineEmits<t${stringToUpCase(componentName)}Emits>();
-const slots = defineSlots<t${stringToUpCase(componentName)}Slots>();
+const emit = defineEmits<${stringToUpCase(componentName)}Emits>();
+const slots = defineSlots<${stringToUpCase(componentName)}Slots>();
 const props = withDefaults(
-  defineProps<t${stringToUpCase(componentName)}Props>(),
+  defineProps<${stringToUpCase(componentName)}Props>(),
   defaultt${stringToUpCase(componentName)}Props(),
 );
 

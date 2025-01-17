@@ -12,7 +12,7 @@ hero:
   text: Vue3 组件库
   tagline: 从 0 到 1 搭建 Vue 组件库
   image:
-    src: /logo.png
+    src: /logo.jpeg
     alt: IElement
   actions:
     - theme: brand
@@ -28,6 +28,6 @@ hero:
       text: 演练场
       link: /playground
     - theme: alt
-      text: Github
+      text: Gitee
       link: https://gitee.com/theirises/i-element
 ---

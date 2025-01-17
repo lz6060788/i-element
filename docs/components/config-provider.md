@@ -9,3 +9,5 @@
 ../demo/config-provider/theme.vue
 
 :::
+
+<ThemeController></ThemeController>

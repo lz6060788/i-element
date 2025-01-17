@@ -1,4 +1,5 @@
 <script setup lang="ts">
+
 const list = ['i-icon-account', 'i-icon-add', 'i-icon-arrow', 'i-icon-back', 'i-icon-bell',
   'i-icon-chart', 'i-icon-close-circle', 'i-icon-close', 'i-icon-code', 'i-icon-collapse',
   'i-icon-delete', 'i-icon-download', 'i-icon-dragable', 'i-icon-edit', 'i-icon-envelope', 'i-icon-eye-close', 'i-icon-eye', 'i-icon-flash',
@@ -31,7 +32,6 @@ const copy = async (text: string) => {
 
 <template>
   <div class="demo">
-    <h1>普通图标</h1>
     <ul class="icons-container">
       <li
         v-for="item in list"

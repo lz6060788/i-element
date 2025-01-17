@@ -23,3 +23,5 @@
 ## [Button Props](../api/interfaces/Button.ButtonProps.md)
 
 ## [Button Slots](../api/modules/Button.ButtonSlots.md)
+
+<ThemeController></ThemeController>

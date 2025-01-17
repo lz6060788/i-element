@@ -7,3 +7,5 @@ import demo from '../demo/theme/vars.vue'
 </script>
 
 <demo></demo>
+
+<ThemeController></ThemeController>

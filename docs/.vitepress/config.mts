@@ -15,6 +15,7 @@ export default defineConfig({
   },
   base: '/i-element/',
   themeConfig: {
+    logo: '/logo.jpeg',
     nav: [
       { text: '指南', link: '/guide/' },
       { text: '组件', link: '/components/' },
@@ -24,6 +25,7 @@ export default defineConfig({
     outline: {
       level: [2, 3],
     },
+    aside: false,
     sidebar: {
       // 指南部分的章节导航
       '/guide/': [
@@ -39,6 +41,20 @@ export default defineConfig({
       '/components/': componentsConfig,
       // API 文档部分的章节导航
       '/api/': apiConfig,
+    },
+    socialLinks: [
+      { icon: 'github', link: 'https://github.com/lz6060788/i-element' },
+    ],
+    lastUpdated: {
+      text: '更新时间：',
+      formatOptions: {
+        dateStyle: 'full',
+        timeStyle: 'medium',
+      },
+    },
+    docFooter: {
+      prev: false,
+      next: false,
     },
   },
 });

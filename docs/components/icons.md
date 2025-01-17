@@ -7,3 +7,5 @@ import demo from '../demo/icons/demo.vue'
 </script>
 
 <demo></demo>
+
+<ThemeController></ThemeController>

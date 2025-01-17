@@ -27,3 +27,5 @@
 ## [Popper Methods](../api/interfaces/Popper.PopperExpose.md)
 
 ## [Popper Slots](../api/modules/Popper.PopperSlots.md)
+
+<ThemeController></ThemeController>

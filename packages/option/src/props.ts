@@ -116,6 +116,7 @@ export interface OptionExpose {
 
 /** 选项组件的插槽信息 */
 export interface OptionSlots {
+  /** 默认显示的内容，相当于label属性 */
   default?: (props: { checked: boolean }) => any;
   prefix?: (props: { checked: boolean }) => any;
   suffix?: (props: { checked: boolean }) => any;

@@ -37,7 +37,11 @@
           ns.b('inner')
         ]"
       >
-        <span>{{ props.label || props.value?.toString() }}</span>
+        <slot
+          v-if="slots.default"
+          :checked="_checked"
+        />
+        <span v-else>{{ props.label || props.value?.toString() }}</span>
       </div>
       <div
         :class="[
@@ -64,7 +68,7 @@
           />
         </template>
         <div
-          v-if="_children"
+          v-if="_children && _children.length"
           class="i-icon-arrow-right"
         />
         <div
@@ -74,7 +78,7 @@
       </div>
     </div>
     <i-popper
-      v-if="_children"
+      v-if="_children && _children.length"
       ref="subOptionsPopperRef"
       placement="right-start"
       offset-distance="0"
@@ -138,7 +142,9 @@ const _style = computed(() => `width: ${props.width}px; min-width: ${props.minwi
 const ns = useNamespace('option');
 
 function clickHandle() {
-  emit('click', props.value);
+  if (!_children.value?.length) {
+    emit('click', props.value);
+  }
 }
 
 const optionRef = ref();

@@ -104,6 +104,7 @@
       offset-distance="0"
       :hover="false"
       :target-element="optionRef"
+      :style="tooltipPopperStyle"
     />
   </li>
 </template>
@@ -169,5 +170,10 @@ const optionsPopperStyle = {
   '--i-popper-padding': 'var(--i-options-padding-y) 0',
   '--i-popper-background-color': 'var(--i-options-background-color)',
   '--i-popper-border-color': 'var(--i-options-border-color)',
+};
+const tooltipPopperStyle = {
+  '--i-popper-padding': '8px',
+  '--i-popper-background-color': 'rgb(var(--i-color-yellow4))',
+  '--i-popper-border-color': 'rgb(var(--i-color-yellow3))',
 };
 </script>

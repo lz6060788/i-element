@@ -9,7 +9,11 @@ const data = ref({
   // width: 90,
   checked: true,
   children: [
-    { value: '选项1-1', minwidth: 120 },
+    {
+      value: '选项1-1',
+      minwidth: 120,
+      tooltip: '这是一段描述',
+    },
     { value: '选项1-2', minwidth: 120 },
     { value: '选项1-3', minwidth: 120 },
     {
@@ -18,7 +22,7 @@ const data = ref({
       checked: true,
       children: [
         { value: '选项1-4-1' },
-        { value: '选项1-4-2' },
+        { value: '选项1-4-2', tooltip: '这是一段描述' },
         { value: '选项1-4-3', checked: true },
       ],
     },

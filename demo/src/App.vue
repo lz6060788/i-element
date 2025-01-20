@@ -4,28 +4,45 @@ import {
 } from '@i-element/ui';
 import { ref } from 'vue';
 
-const isChecked = ref(true);
-function switchCheck() {
-  isChecked.value = !isChecked.value;
-}
+const data = ref({
+  value: '选项1',
+  // width: 90,
+  checked: true,
+  children: [
+    {
+      value: '选项1-1',
+      minwidth: 120,
+      tooltip: '这是一段描述',
+    },
+    { value: '选项1-2', minwidth: 120 },
+    { value: '选项1-3', minwidth: 120 },
+    {
+      value: '选项1-4',
+      minwidth: 120,
+      checked: true,
+      children: [
+        { value: '选项1-4-1' },
+        { value: '选项1-4-2', tooltip: '这是一段描述' },
+        { value: '选项1-4-3', checked: true },
+      ],
+    },
+  ],
+});
 </script>
 
 <template>
-  <div>
+  <div class="container">
     <i-option
-      value="value"
-      :label="isChecked ? '选中态' : '常规态'"
-      :checked="isChecked"
       :show-checked-icon="false"
-      @click="switchCheck"
-    >
-      <template #prefix="{ checked }">
-        <span>我来组成头部{{ checked }}</span>
-      </template>
-      <span>选项A</span>
-      <template #suffix="{ checked }">
-        <span>我来组成尾部{{ checked }}</span>
-      </template>
-    </i-option>
+      v-bind="data"
+    />
   </div>
 </template>
+
+<style lang="scss" scoped>
+.container {
+  box-sizing: border-box;
+  width: 100px;
+  padding: 24px;
+}
+</style>

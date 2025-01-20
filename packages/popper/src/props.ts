@@ -86,6 +86,11 @@ export interface PopperProps {
    * @default null
    */
   content?: string | null
+  /**
+   * 触发元素，优先级slot > 该属性，当popper触发关联一个无法被外层的元素时，使用该属性，且需要手动控制popper的显示
+   * @default null
+   */
+  targetElement?: null | HTMLElement
 }
 
 /** @hidden */
@@ -106,6 +111,7 @@ export function defaultPopperProps() {
     interactive: true,
     locked: true,
     content: null,
+    targetElement: null,
   } satisfies Required<InferVueDefaults<PopperProps>>;
 }
 
@@ -117,6 +123,8 @@ export type PopperEmits = {
 
 /** 浮层组件对外暴露的方法 */
 export interface PopperExpose {
+  'open': () => void;
+  'close': () => void;
 }
 
 /** 按钮组件的插槽信息 */

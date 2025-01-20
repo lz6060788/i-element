@@ -109,9 +109,15 @@ export function usePopper({
     state.popperInstance?.destroy();
   });
 
+  async function refreshPopperInstance() {
+    state.popperInstance?.destroy();
+    await initializePopper();
+  }
+
   return {
     ...toRefs(state),
     open,
     close,
+    refreshPopperInstance,
   };
 }

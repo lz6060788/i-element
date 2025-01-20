@@ -65,6 +65,7 @@ import {
   PopperProps,
   PopperSlots,
   PopperEmits,
+  PopperExpose,
 } from './props';
 
 const emit = defineEmits<PopperEmits>();
@@ -81,17 +82,6 @@ const popperNode = ref(null);
 const triggerNode = ref(null);
 const modifiedIsOpen = ref(false);
 
-onMounted(() => {
-  const children = slots.default();
-
-  if (children && children.length > 1) {
-    return console.error(
-      `[Popper]: The <Popper> component expects only one child element at its root. You passed ${children.length} child nodes.`,
-    );
-  }
-  return null;
-});
-
 const {
   arrow,
   arrowPadding,
@@ -107,9 +97,23 @@ const {
   placement,
   show,
   zIndex,
+  targetElement,
 } = toRefs(props);
 
-const { isOpen, open, close } = usePopper({
+onMounted(() => {
+  const children = slots.default?.();
+
+  if (children && children.length > 1 && !targetElement.value) {
+    return console.error(
+      `[Popper]: The <Popper> component expects only one child element at its root. You passed ${children.length} child nodes.`,
+    );
+  }
+  return null;
+});
+
+const {
+  isOpen, open, close, refreshPopperInstance,
+} = usePopper({
   arrowPadding,
   emit,
   locked,
@@ -117,7 +121,11 @@ const { isOpen, open, close } = usePopper({
   offsetSkid,
   placement,
   popperNode,
-  triggerNode,
+  triggerNode: triggerNode.value || targetElement,
+});
+
+watch(targetElement, () => {
+  refreshPopperInstance();
 });
 
 const { hasContent } = useContent(slots, popperNode, content);
@@ -197,5 +205,10 @@ watchEffect(() => {
   if (enableClickAway.value) {
     useClickAway(popperContainerNode, closePopper);
   }
+});
+
+defineExpose<PopperExpose>({
+  open,
+  close,
 });
 </script>

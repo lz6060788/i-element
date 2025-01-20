@@ -43,6 +43,10 @@
       {
         "text": "Popconfirm 气泡确认框",
         "link": "/components/popconfirm"
+      },
+      {
+        "text": "Option 选项",
+        "link": "/components/option"
       }
     ]
   }

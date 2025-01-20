@@ -1,38 +1,31 @@
 <script setup lang="ts">
 import {
-  IPopconfirm,
+  IOption,
 } from '@i-element/ui';
+import { ref } from 'vue';
+
+const isChecked = ref(true);
+function switchCheck() {
+  isChecked.value = !isChecked.value;
+}
 </script>
 
 <template>
-  <div class="demo">
-    <i-popconfirm
-      arrow
-      content="悬浮触发"
-      placement="right-start"
+  <div>
+    <i-option
+      value="value"
+      :label="isChecked ? '选中态' : '常规态'"
+      :checked="isChecked"
+      :show-checked-icon="false"
+      @click="switchCheck"
     >
-      <template #content>
-        <div class="content">
-          <p>这是一段描述占位符1111</p>
-        </div>
+      <template #prefix="{ checked }">
+        <span>我来组成头部{{ checked }}</span>
       </template>
-      测试
-    </i-popconfirm>
+      <span>选项A</span>
+      <template #suffix="{ checked }">
+        <span>我来组成尾部{{ checked }}</span>
+      </template>
+    </i-option>
   </div>
 </template>
-
-<style lang="scss" scoped>
-.demo {
-  width: 100%;
-  padding: 24px;
-
-  .content {
-    .footer {
-      display: flex;
-      align-items: center;
-      justify-content: end;
-      margin-top: 16px;
-    }
-  }
-}
-</style>

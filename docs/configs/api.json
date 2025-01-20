@@ -110,6 +110,25 @@
             "link": "/api/interfaces/Popconfirm.PopconfirmSlots"
           }
         ]
+      },
+      {
+        "text": "Option 选项",
+        "link": "/api/modules/Option",
+        "collapsed": true,
+        "items": [
+          {
+            "text": "OptionExpose",
+            "link": "/api/interfaces/Option.OptionExpose"
+          },
+          {
+            "text": "OptionProps",
+            "link": "/api/interfaces/Option.OptionProps"
+          },
+          {
+            "text": "OptionSlots",
+            "link": "/api/interfaces/Option.OptionSlots"
+          }
+        ]
       }
     ]
   }

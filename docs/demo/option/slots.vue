@@ -22,6 +22,7 @@ function switchCheck() {
       <template #prefix="{ checked }">
         <span>我来组成头部{{ checked }}</span>
       </template>
+      <span>选项A</span>
       <template #suffix="{ checked }">
         <span>我来组成尾部{{ checked }}</span>
       </template>

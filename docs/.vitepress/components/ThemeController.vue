@@ -23,3 +23,11 @@ watch(data.isDark, (isDark: boolean) => {
   }
 });
 </script>
+
+<style>
+.vp-doc ul,
+.vp-doc ol {
+  padding-left: 0;
+  margin: 0;
+}
+</style>

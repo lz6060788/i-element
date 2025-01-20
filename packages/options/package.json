@@ -1,5 +1,5 @@
 {
-  "name": "@i-element/option",
+  "name": "@i-element/options",
   "version": "0.0.1",
   "description": "",
   "keywords": [
@@ -34,15 +34,15 @@
   },
   "dependencies": {
     "@i-element/shared": "workspace:^",
-    "@i-element/ui": "workspace:^"
+    "@i-element/option": "workspace:^"
   },
-  "main": "./dist/i-element-option.umd.js",
-  "module": "./dist/i-element-option.mjs",
+  "main": "./dist/i-element-options.umd.js",
+  "module": "./dist/i-element-options.mjs",
   "types": "./dist/src/index.d.ts",
   "exports": {
     ".": {
-      "require": "./dist/i-element-option.umd.js",
-      "import": "./dist/i-element-option.mjs",
+      "require": "./dist/i-element-options.umd.js",
+      "import": "./dist/i-element-options.mjs",
       "types": "./dist/src/index.d.ts"
     },
     "./*": "./*",

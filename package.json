@@ -14,7 +14,8 @@
     "build:icons": "pnpm --filter @i-element/icons run build",
     "build:ui": "pnpm run type:src && pnpm --filter ./packages/** run build",
     "publish": "pnpm --filter ./packages/** run publish",
-    "build:cli": "pnpm --filter @i-element/cli run build && pnpm -wD install ./packages/cli"
+    "build:cli": "pnpm --filter @i-element/cli run build && pnpm -wD install ./packages/cli",
+    "cli:help": "npx nb-cli --help"
   },
   "devDependencies": {
     "@commitlint/cli": "^18.4.0",

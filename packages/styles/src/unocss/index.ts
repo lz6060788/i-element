@@ -4,3 +4,4 @@ export * from './button';
 export * from './input';
 export * from './text';
 export * from './popper';
+export * from './options';

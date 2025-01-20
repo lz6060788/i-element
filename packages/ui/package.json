@@ -55,6 +55,8 @@
     "@i-element/shared": "workspace:^",
     "@i-element/styles": "workspace:^",
     "@i-element/popper": "workspace:^",
-    "@i-element/popconfirm": "workspace:^"
+    "@i-element/popconfirm": "workspace:^",
+    "@i-element/options": "workspace:^",
+    "@i-element/option": "workspace:^"
   }
 }

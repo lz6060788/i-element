@@ -3,6 +3,7 @@ import { ButtonCssVarsConfig } from './button';
 import { TextCssVarsConfig } from './text';
 import { InputCssVarsConfig } from './input';
 import { PopperCssVarsConfig } from './popper';
+import { OptionsCssVarsConfig } from './options';
 
 // 引入其他组件的主题变量类型
 // import { ComponentCssVarConfig } from './other-component';
@@ -13,7 +14,8 @@ export interface IElementCssVarsConfig extends
   ButtonCssVarsConfig,
   TextCssVarsConfig,
   InputCssVarsConfig,
-  PopperCssVarsConfig {
+  PopperCssVarsConfig,
+  OptionsCssVarsConfig {
   [key: string]: string | undefined;
 }
 
@@ -24,3 +26,4 @@ export * from './button';
 export * from './text';
 export * from './input';
 export * from './popper';
+export * from './options';

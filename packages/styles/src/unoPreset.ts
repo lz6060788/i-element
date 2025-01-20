@@ -8,6 +8,7 @@ import {
   inputConfig,
   textConfig,
   popperConfig,
+  optionsConfig,
 } from './unocss';
 
 /** 组件名称与预设对象的关系表 */
@@ -17,6 +18,7 @@ const configMaps = {
   input: inputConfig,
   text: textConfig,
   popper: popperConfig,
+  options: optionsConfig,
 } satisfies Record<string, UserConfig<Theme>>;
 
 type ConfigKeys = keyof typeof configMaps;

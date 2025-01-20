@@ -7,6 +7,7 @@ const list = ['i-icon-account', 'i-icon-add', 'i-icon-arrow', 'i-icon-back', 'i-
   'i-icon-list', 'i-icon-little-triangle', 'i-icon-lock-off', 'i-icon-lock-on', 'i-icon-more', 'i-icon-password', 'i-icon-plus', 'i-icon-question',
   'i-icon-remove', 'i-icon-right', 'i-icon-setting', 'i-icon-slider', 'i-icon-strategy', 'i-icon-success-fill',
   'i-icon-success', 'i-icon-switch', 'i-icon-table', 'i-icon-top', 'i-icon-trend', 'i-icon-trush', 'i-icon-up', 'i-icon-warning', 'i-icon-loading',
+  'i-icon-arrow-right',
 ];
 const filledList = ['i-icon-fill-account', 'i-icon-fill-add', 'i-icon-fill-arrow', 'i-icon-fill-back', 'i-icon-fill-bell', 'i-icon-fill-chart',
   'i-icon-fill-close-circle', 'i-icon-fill-close', 'i-icon-fill-code', 'i-icon-fill-collapse', 'i-icon-fill-delete', 'i-icon-fill-download',
@@ -15,7 +16,7 @@ const filledList = ['i-icon-fill-account', 'i-icon-fill-add', 'i-icon-fill-arrow
   'i-icon-fill-list', 'i-icon-fill-little-triangle', 'i-icon-fill-loading', 'i-icon-fill-lock-off', 'i-icon-fill-lock-on', 'i-icon-fill-more',
   'i-icon-fill-password', 'i-icon-fill-plus', 'i-icon-fill-question', 'i-icon-fill-remove', 'i-icon-fill-repair', 'i-icon-fill-right',
   'i-icon-fill-setting', 'i-icon-fill-slider', 'i-icon-fill-strategy', 'i-icon-fill-success-fill', 'i-icon-fill-success', 'i-icon-fill-switch',
-  'i-icon-fill-table', 'i-icon-fill-top', 'i-icon-fill-trend', 'i-icon-fill-trush', 'i-icon-fill-up', 'i-icon-fill-warning',
+  'i-icon-fill-table', 'i-icon-fill-top', 'i-icon-fill-trend', 'i-icon-fill-trush', 'i-icon-fill-up', 'i-icon-fill-warning', 'i-icon-arrow-right',
 ];
 
 const largeList = ['i-icon-fill-operate-buy', 'i-icon-fill-operate-position', 'i-icon-fill-operate-sale'];

@@ -221,6 +221,27 @@ importers:
         specifier: '>=3.0.0'
         version: 3.4.21(typescript@5.4.3)
 
+  packages/option:
+    dependencies:
+      '@i-element/shared':
+        specifier: workspace:^
+        version: link:../shared
+      '@i-element/ui':
+        specifier: workspace:^
+        version: link:../ui
+      vue:
+        specifier: '>=3.0.0'
+        version: 3.4.21(typescript@5.4.3)
+
+  packages/options:
+    dependencies:
+      '@i-element/shared':
+        specifier: workspace:^
+        version: link:../shared
+      vue:
+        specifier: '>=3.0.0'
+        version: 3.4.21(typescript@5.4.3)
+
   packages/popconfirm:
     dependencies:
       '@i-element/button':
@@ -289,6 +310,12 @@ importers:
       '@i-element/input':
         specifier: workspace:^
         version: link:../input
+      '@i-element/option':
+        specifier: workspace:^
+        version: link:../option
+      '@i-element/options':
+        specifier: workspace:^
+        version: link:../options
       '@i-element/popconfirm':
         specifier: workspace:^
         version: link:../popconfirm

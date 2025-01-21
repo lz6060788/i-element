@@ -238,6 +238,9 @@ importers:
       '@i-element/shared':
         specifier: workspace:^
         version: link:../shared
+      '@i-element/ui':
+        specifier: workspace:^
+        version: link:../ui
       vue:
         specifier: '>=3.0.0'
         version: 3.4.21(typescript@5.4.3)

@@ -127,6 +127,10 @@
           {
             "text": "OptionSlots",
             "link": "/api/interfaces/Option.OptionSlots"
+          },
+          {
+            "text": "OptionSuffixType",
+            "link": "/api/interfaces/Option.OptionSuffixType"
           }
         ]
       }

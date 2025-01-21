@@ -9,6 +9,7 @@
     z-index: v-bind(--i-popper-zindex);
     padding: var(--i-popper-padding);
     font-size: var(--i-popper-fontsize);
+    line-height: normal;
     color: var(--i-popper-color);
     background: var(--i-popper-background-color);
     border-color: var(--i-popper-border-color);

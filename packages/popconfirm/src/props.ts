@@ -6,7 +6,11 @@ import {
 } from '@i-element/ui';
 import type Popconfirm from './popconfirm.vue';
 
-/** 气泡确认框组件的属性 */
+/**
+ * 气泡确认框组件的属性
+ * @description 低版本vue可能会导致编译报错
+ * @link https://github.com/vuejs/core/issues/4294
+*/
 export interface PopconfirmProps extends Omit<PopperProps, 'hover' | 'show'> {
   /**
    * 展示确定按钮

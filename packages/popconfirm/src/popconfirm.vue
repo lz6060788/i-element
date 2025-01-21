@@ -53,8 +53,7 @@ import { ref, computed } from 'vue';
 import {
   useNamespace,
 } from '@i-element/shared';
-import { IPopper } from '@i-element/popper';
-import { IButton } from '@i-element/button';
+import { IPopper, IButton } from '@i-element/ui';
 import {
   defaultPopconfirmProps,
   PopconfirmProps,

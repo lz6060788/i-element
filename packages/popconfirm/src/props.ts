@@ -1,8 +1,9 @@
 /** @module Popconfirm */
 import { InferVueDefaults } from '@i-element/shared';
 // import { Placement } from '@popperjs/core';
-import { type PopperProps, defaultPopperProps, type PopperEmits } from '@i-element/popper';
-import { type ButtonProps } from '@i-element/button';
+import {
+  type PopperProps, defaultPopperProps, type PopperEmits, type ButtonProps,
+} from '@i-element/ui';
 import type Popconfirm from './popconfirm.vue';
 
 /** 气泡确认框组件的属性 */

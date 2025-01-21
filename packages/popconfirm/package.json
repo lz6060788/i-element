@@ -34,8 +34,7 @@
   },
   "dependencies": {
     "@i-element/shared": "workspace:^",
-    "@i-element/popper": "workspace:^",
-    "@i-element/button": "workspace:^"
+    "@i-element/ui": "workspace:^"
   },
   "main": "./dist/i-element-popconfirm.umd.js",
   "module": "./dist/i-element-popconfirm.mjs",

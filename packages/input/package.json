@@ -45,7 +45,6 @@
     "vue": ">=3.0.0"
   },
   "dependencies": {
-    "@i-element/button": "workspace:^",
     "@i-element/shared": "workspace:^"
   }
 }

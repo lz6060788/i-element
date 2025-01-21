@@ -92,6 +92,7 @@
             v-for="item in _children"
             :key="item.value.toString()"
             v-bind="item"
+            @click="subOptionclickHandle"
           />
         </ul>
       </template>
@@ -118,6 +119,7 @@ import {
   OptionProps,
   OptionSlots,
   OptionEmits,
+  OptionValueType,
 } from './props';
 
 defineOptions({
@@ -146,6 +148,9 @@ function clickHandle() {
   if (!_children.value?.length) {
     emit('click', props.value);
   }
+}
+function subOptionclickHandle(value: OptionValueType) {
+  emit('click', value);
 }
 
 const optionRef = ref();

@@ -22,3 +22,18 @@
 - [ ] 代码演练场功能
 - [ ] 国际化
 - [ ] ...
+
+## 快速启动
+
+项目依赖 `node^16.17`
+
+```bash
+// 如果已安装pnpm，跳过该步骤
+npm install -g pnpm
+// 安装项目依赖
+pnpm install
+// 启动文档站点
+npm run dev:docs
+```
+
+> 文档站点预览地址：https://github.com/lz6060788/i-element

@@ -7,5 +7,9 @@
   "dependencies": {
     "@i-element/ui": "workspace:^"
   },
+  "peerDependencies": {
+    "vite": ">=3.0.0",
+    "vue": ">=3.0.0"
+  },
   "devDependencies": {}
 }

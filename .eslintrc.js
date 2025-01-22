@@ -76,6 +76,9 @@ module.exports = defineConfig({
     'linebreak-style': 'off',
     // 箭头函数不需要return
     'consistent-return': 'off',
+
+    // 部分相互依赖的组件会有循环引入的提醒
+    'import/no-cycle': 'off',
   },
 
   // 文件级别的重写

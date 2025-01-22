@@ -1,3 +1,4 @@
+<!-- eslint-disable vue/no-v-html -->
 <template>
   <li
     ref="optionRef"
@@ -92,6 +93,7 @@
             v-for="item in _children"
             :key="item.value.toString()"
             v-bind="item"
+            :is-root="false"
             @click="subOptionclickHandle"
           />
         </ul>
@@ -112,15 +114,18 @@
 
 <script setup lang="ts">
 import { useNamespace } from '@i-element/shared';
-import { computed, ref } from 'vue';
+import {
+  computed, inject, ref,
+} from 'vue';
 import { IPopper } from '@i-element/ui';
 import {
   defaultOptionProps,
   OptionProps,
   OptionSlots,
   OptionEmits,
-  OptionValueType,
+  OptionClickCallbackParams,
 } from './props';
+import { OptionsKey } from '../../options/src/constant';
 
 defineOptions({
   name: 'IOption',
@@ -132,25 +137,61 @@ const props = withDefaults(
   defineProps<OptionProps>(),
   defaultOptionProps(),
 );
+const _optionsContext = inject(OptionsKey, {
+  props: { modelValue: '' }, checkedChainList: [], isSlot: false, clickHandle: () => {},
+});
 
 const _disabled = computed(() => !!props.disabled);
-const _checked = computed(() => !!props.checked);
-const _showCheckedIcon = computed(() => !!props.showCheckedIcon);
-const _showCheckBox = computed(() => !!props.showCheckBox);
+const _checked = computed(() => _optionsContext.checkedChainList.includes(props.value));
+const _showCheckedIcon = computed(() => _optionsContext.props.showCheckedIcon ?? props.showCheckedIcon);
+const _showCheckBox = computed(() => _optionsContext.props.showCheckBox ?? props.showCheckBox);
 const _suffix = computed(() => props.suffix);
 const _tooltip = computed(() => props.tooltip);
 const _children = computed(() => props.children);
-const _style = computed(() => `width: ${props.width}px; min-width: ${props.minwidth}px`);
+const _closeAfterClick = computed(() => _optionsContext.props.closeAfterClick ?? props.closeAfterClick);
+const _style = computed(() => `width: ${_optionsContext.props.width ?? props.width}px; min-width: ${_optionsContext.props.minwidth ?? props.minwidth}px`);
+const _isRoot = computed(() => props.isRoot);
 
 const ns = useNamespace('option');
 
 function clickHandle() {
+  // 插槽形式渲染且为根选项，调用options注入的click函数
+  if (_optionsContext.isSlot && _isRoot.value) {
+    _optionsContext?.clickHandle({
+      value: props.value,
+      checked: !_checked.value,
+      valueChain: [props.value],
+    });
+  }
+  // 非子节点不想上冒泡点击事件
   if (!_children.value?.length) {
-    emit('click', props.value);
+    if (_closeAfterClick.value) {
+      popperClose();
+    }
+    emit('click', {
+      value: props.value,
+      checked: !_checked.value,
+      valueChain: [props.value],
+    });
   }
 }
-function subOptionclickHandle(value: OptionValueType) {
-  emit('click', value);
+function subOptionclickHandle(params: OptionClickCallbackParams) {
+  if (_closeAfterClick.value) {
+    popperClose();
+  }
+  // 子选项冒泡到根选项后，若为插槽形式渲染，则调用options注入的click函数
+  if (_optionsContext.isSlot && _isRoot.value) {
+    _optionsContext?.clickHandle({
+      value: params.value,
+      checked: params.checked,
+      valueChain: [props.value, ...params.valueChain],
+    });
+  }
+  emit('click', {
+    value: params.value,
+    checked: params.checked,
+    valueChain: [props.value, ...params.valueChain],
+  });
 }
 
 const optionRef = ref();
@@ -165,9 +206,12 @@ function mouseenterHandle() {
 }
 
 function mouseleaveHandle() {
+  popperClose();
+  emit('mouseleave', props.value);
+}
+function popperClose() {
   tooltipPopperRef.value?.close();
   subOptionsPopperRef.value?.close();
-  emit('mouseleave', props.value);
 }
 
 // 子选项浮层样式覆盖

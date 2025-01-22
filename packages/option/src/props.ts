@@ -65,11 +65,6 @@ export interface OptionProps {
   */
   children?: OptionProps[] | null;
   /**
-   * 是否选中
-   * @default false
-  */
-  checked?: boolean;
-  /**
    * 提示信息
    * @default ''
    */
@@ -84,6 +79,17 @@ export interface OptionProps {
    * @default 0
    */
   minwidth?: null | number
+  /**
+   * 点击后关闭
+   * @default true
+   */
+  closeAfterClick?: boolean
+  /**
+   * 是否为根选项
+   * @default true
+   * @hidden
+  */
+  isRoot?: boolean
 }
 
 /** @hidden */
@@ -96,16 +102,20 @@ export function defaultOptionProps() {
     showCheckBox: false,
     suffix: null,
     children: null,
-    checked: false,
     tooltip: '',
     width: null,
     minwidth: 0,
+    closeAfterClick: true,
+    isRoot: true,
   } satisfies Required<InferVueDefaults<OptionProps>>;
 }
 
+/** @hidden */
+export type OptionClickCallbackParams = { value: OptionValueType, checked: boolean, valueChain: OptionValueType[] };
+
 /** 选项组件的事件 */
 export type OptionEmits = {
-  'click': [value: OptionValueType],
+  'click': [value: OptionClickCallbackParams],
   'mouseenter': [value: OptionValueType],
   'mouseleave': [value: OptionValueType],
 };

@@ -98,6 +98,10 @@
         "collapsed": true,
         "items": [
           {
+            "text": "PopconfirmEmits",
+            "link": "/api/interfaces/Popconfirm.PopconfirmEmits"
+          },
+          {
             "text": "PopconfirmExpose",
             "link": "/api/interfaces/Popconfirm.PopconfirmExpose"
           },
@@ -131,6 +135,29 @@
           {
             "text": "OptionSuffixType",
             "link": "/api/interfaces/Option.OptionSuffixType"
+          }
+        ]
+      },
+      {
+        "text": "Options 选项列表",
+        "link": "/api/modules/Options",
+        "collapsed": true,
+        "items": [
+          {
+            "text": "OptionsContext",
+            "link": "/api/interfaces/Options.OptionsContext"
+          },
+          {
+            "text": "OptionsExpose",
+            "link": "/api/interfaces/Options.OptionsExpose"
+          },
+          {
+            "text": "OptionsProps",
+            "link": "/api/interfaces/Options.OptionsProps"
+          },
+          {
+            "text": "OptionsSlots",
+            "link": "/api/interfaces/Options.OptionsSlots"
           }
         ]
       }

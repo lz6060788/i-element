@@ -47,6 +47,10 @@
       {
         "text": "Option 选项",
         "link": "/components/option"
+      },
+      {
+        "text": "Options 选项列表",
+        "link": "/components/Options"
       }
     ]
   }

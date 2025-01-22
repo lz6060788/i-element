@@ -71,19 +71,19 @@ const props = withDefaults(
   defaultPopconfirmProps(),
 );
 
-const show = ref(false);
+const popperIsShow = ref(false);
 
 const _popperProps = computed(() => ({
   ...props,
   hover: false,
-  show: show.value,
+  show: popperIsShow.value,
 }));
 
 const _confirmButtonProps = computed(() => props.confirmButtonProps || {});
 const _cancelButtonProps = computed(() => props.cancelButtonProps || {});
 
 function clickHandle(e: MouseEvent) {
-  show.value = true;
+  popperIsShow.value = true;
   emit('click', e);
 }
 
@@ -95,12 +95,12 @@ function confirmHandle(e: MouseEvent) {
 }
 
 function cancelHandle(e: MouseEvent) {
-  show.value = false;
+  popperIsShow.value = false;
   emit('cancel', e);
 }
 
 function close() {
-  show.value = false;
+  popperIsShow.value = false;
 }
 defineExpose<PopconfirmExpose>({
   close,

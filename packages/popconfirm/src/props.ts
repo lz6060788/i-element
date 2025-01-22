@@ -2,16 +2,19 @@
 import { InferVueDefaults } from '@i-element/shared';
 // import { Placement } from '@popperjs/core';
 import {
-  type PopperProps, defaultPopperProps, type PopperEmits, type ButtonProps,
-} from '@i-element/ui';
+  defaultPopperProps, type PopperEmits, type PopperProps,
+} from '../../popper/src/index';
+import {
+  ButtonProps,
+} from '../../button/src/index';
 import type Popconfirm from './popconfirm.vue';
 
 /**
- * 气泡确认框组件的属性
- * @description 低版本vue可能会导致编译报错
+ * 气泡确认框组件的属性，支持大部分popper属性
+ * @description 联合类型的props声明可能会导致编译vue报错
  * @link https://github.com/vuejs/core/issues/4294
 */
-export interface PopconfirmProps extends Omit<PopperProps, 'hover' | 'show'> {
+export interface PopconfirmProps extends PopperProps {
   /**
    * 展示确定按钮
    * @default true
@@ -46,7 +49,7 @@ export interface PopconfirmProps extends Omit<PopperProps, 'hover' | 'show'> {
    * 点击确认后消失
    * @default true
    */
-  closeAfterConfirm?: true
+  closeAfterConfirm?: true;
 }
 
 /** @hidden */
@@ -63,12 +66,14 @@ export function defaultPopconfirmProps() {
   } satisfies Required<InferVueDefaults<PopconfirmProps>>;
 }
 
-/** 气泡确认框组件的事件 */
-export type PopconfirmEmits = {
+/**
+ * 气泡确认框组件的事件
+ */
+export interface PopconfirmEmits extends PopperEmits {
   click: [value: MouseEvent];
   confirm: [value: MouseEvent, value: PopconfirmExpose['close']];
   cancel: [value: MouseEvent];
-} & PopperEmits;
+}
 
 /** 气泡确认框组件对外暴露的方法 */
 export interface PopconfirmExpose {

@@ -8,7 +8,7 @@
 
 :::demo
 
-../demo/Options/optionsCustom.vue
+../demo/options/optionsCustom.vue
 
 :::
 
@@ -18,7 +18,7 @@
 
 :::demo
 
-../demo/Options/optionsSlot.vue
+../demo/options/optionsSlot.vue
 
 :::
 

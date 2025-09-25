@@ -6,7 +6,7 @@
   }
 
   &-inner {
-    z-index: v-bind(--i-popper-zindex);
+    z-index: var(--i-popper-zindex);
     padding: var(--i-popper-padding);
     font-size: var(--i-popper-fontsize);
     line-height: normal;

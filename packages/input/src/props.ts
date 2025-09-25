@@ -2,7 +2,9 @@
 import { InferVueDefaults } from '@i-element/shared';
 import type Input from './input.vue';
 
-/** 输入框组件的属性 */
+/**
+ * 输入框组件的属性如下
+*/
 export interface InputProps {
   /**
    * 输入值，支持 v-model 双向绑定
@@ -162,32 +164,74 @@ export function defaultInputProps(): Required<InferVueDefaults<InputProps>> {
   };
 }
 
-/** 输入框组件的事件 */
+/**
+ * 输入框组件的事件
+ * @interface
+ * */
 export type InputEmits = {
   'update:modelValue': [value: string];
+  /**
+   * input事件
+   * @param value 输入值
+   */
   input: [value: string];
+  /**
+   * change事件
+   * @param value 输入值
+   */
   change: [value: string];
+  /**
+   * 输入框失去焦点
+   * @param e 事件对象
+   */
   focus: [e: FocusEvent];
+  /**
+   * 输入框获取焦点
+   * @param e 事件对象
+   */
   blur: [e: FocusEvent];
+  /**
+   * 输入框键盘按下
+   * @param e 事件对象
+   */
   keydown: [e: KeyboardEvent];
-  /** 前缀图标点击 */
+  /**
+   * 前缀图标点击事件
+   * @param e 事件对象
+   */
   prefixIconClick: [e: MouseEvent];
-  /** 后缀图表点击 */
+  /**
+   * 后缀图标点击事件
+   * @param e 事件对象
+   */
   suffixIconClick: [e: MouseEvent];
 };
 
 /** 输入框组件对外暴露的方法 */
 export interface InputExpose {
-  /** 清空输入框 */
+  /**
+   * 清空输入框
+   * @returns void
+  */
   clear: () => void
-  /** 聚焦 */
+  /**
+   * 聚焦输入框
+   * @returns void
+   */
   focus: () => void
 }
 
 /** 按钮组件的插槽信息 */
 export interface InputSlots {
+  /**
+   * 前缀插槽,使用：v-slot:prefix
+   */
   prefix: any;
+  /**
+   * 后缀插槽,使用：v-slot:suffix
+   */
   suffix: any;
 }
 
+/** @hidden */
 export type InputInstance = InstanceType<typeof Input>;

@@ -1,7 +1,8 @@
 {
   "name": "@i-element/docs",
   "scripts": {
-    "api": "tsx scripts/typedoc.ts",
+    "generate": "npx esbuild scripts/typedoc.ts --format=esm --outfile=scripts/typedoc.mjs",
+    "api": "pnpm run generate && node scripts/typedoc.mjs",
     "dev": "vitepress dev . --host --port 8080",
     "build": "pnpm run api && vitepress build .",
     "preview": "vitepress preview . --host"
@@ -9,13 +10,14 @@
   "dependencies": {
     "@i-element/ui": "workspace:^",
     "fsevents": "^2.3.3",
+    "esbuild": "^0.25.4",
     "markdown-it": "^14.0.0",
     "markdown-it-container": "^4.0.0"
   },
   "devDependencies": {
     "@types/markdown-it": "^13.0.7",
-    "typedoc": "^0.25.7",
-    "typedoc-plugin-markdown": "^3.17.1",
+    "typedoc": "^0.28.3",
+    "typedoc-plugin-markdown": "~4.6.3",
     "vitepress": "1.0.0-rc.22"
   },
   "peerDependencies": {

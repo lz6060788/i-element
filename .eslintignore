@@ -2,6 +2,7 @@ node_modules
 dist
 md/**
 bin
+*.mjs
 
 !.eslintrc.js
 !.stylelintrc.js

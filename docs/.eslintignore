@@ -4,3 +4,5 @@
 # 产物和缓存依然要忽略
 .vitepress/dist
 .vitepress/cache
+
+scripts/*.mjs

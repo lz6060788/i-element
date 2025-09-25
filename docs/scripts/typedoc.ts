@@ -1,12 +1,18 @@
+import { join, dirname } from 'node:path';
+import { fileURLToPath } from 'node:url';
+import { readFile, writeFile } from 'node:fs/promises';
+import { DefaultTheme } from 'vitepress';
 import {
   Application,
   TSConfigReader,
   ReflectionKind,
   ProjectReflection,
-} from 'typedoc';
-import { join } from 'node:path';
-import { readFile, writeFile } from 'node:fs/promises';
-import { DefaultTheme } from 'vitepress';
+// eslint-disable-next-line import/extensions
+} from '../node_modules/typedoc/dist/index.js';
+import defaultLocaleJson from '../locale/default.json' assert { type: 'json' };
+
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = dirname(__filename);
 
 /** 从整个工程的根目录计算路径 */
 const fromRoot = (...paths: string[]) => join(
@@ -25,9 +31,11 @@ const OUT_DIR = join(__dirname, '..', 'api');
 const CONFIGS_DIR = join(__dirname, '..', 'configs');
 
 async function main() {
+  // const paths = await getRelativePropsPaths();
+  // console.log(paths);
   const app = await Application.bootstrapWithPlugins({
     // 指定文件入口，支持 globs 匹配多文件。规定为所有组件包内的 src/props.ts 文件。
-    entryPoints: [fromRoot('packages', '**', 'props.ts')],
+    entryPoints: [fromRoot('packages', '**', 'props.ts').replace(/\\/g, '/')],
 
     // tsconfig 配置
     tsconfig: tsConfigPath,
@@ -39,6 +47,26 @@ async function main() {
     disableSources: true,
     readme: 'none',
     skipErrorChecking: true,
+    hidePageHeader: true,
+    hideBreadcrumbs: true,
+    useCodeBlocks: true,
+    pageTitleTemplates: {
+      member: (args: { name: string }) => `${splitByUpperCase(args.name).map((item) => defaultLocaleJson[item]).join('')}`,
+    },
+
+    interfacePropertiesFormat: 'table',
+
+    locales: {
+      zh: {
+        Properties: '属性',
+        Expose: '方法',
+        Slots: '插槽',
+        Emits: '事件',
+      },
+    },
+
+    out: OUT_DIR,
+    lang: 'zh',
   }, [
     new TSConfigReader(),
   ]);
@@ -48,6 +76,7 @@ async function main() {
   if (project) {
     // 生成并输出产物
     await app.generateDocs(project, OUT_DIR);
+    await app.generateOutputs(project);
 
     // 生成产物 json 文件
     const jsonDir = join(OUT_DIR, 'documentation.json');
@@ -82,16 +111,18 @@ async function resolveConfig(
     if (!moduleConfig) return;
 
     moduleConfig.collapsed = true;
-    moduleConfig.link = `/api/modules/${module.name}`;
+    moduleConfig.link = `/api/${module.name}/README`;
     // 每个模块下的 interface、class 继续细分为三级导航
     moduleConfig.items = [];
 
     module.children?.forEach((sub) => {
       // 将三级导航的跳转路径与产物文件路径对应起来
       if (sub.kind === ReflectionKind.Class) {
-        moduleConfig.items?.push({ text: sub.name, link: `/api/classes/${module.name}.${sub.name}` });
+        moduleConfig.items?.push({ text: sub.name, link: `/api/${module.name}/classes/${sub.name}` });
+      } else if (sub.kind === ReflectionKind.TypeAlias) {
+        moduleConfig.items?.push({ text: sub.name, link: `/api/${module.name}/type-aliases/${sub.name}` });
       } else if (sub.kind === ReflectionKind.Interface) {
-        moduleConfig.items?.push({ text: sub.name, link: `/api/interfaces/${module.name}.${sub.name}` });
+        moduleConfig.items?.push({ text: sub.name, link: `/api/${module.name}/interfaces/${sub.name}` });
       }
     });
   });
@@ -115,4 +146,8 @@ function findComponentFromConfig(config: DefaultTheme.SidebarItem[], name: strin
   return itemIndex >= 0 ?
     targetCategory?.items?.[itemIndex] || null :
     null;
+}
+
+function splitByUpperCase(str: string): string[] {
+  return str.split(/(?=[A-Z])/);
 }

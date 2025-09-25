@@ -1,7 +1,8 @@
 /** @module Options */
 import { InferVueDefaults } from '@i-element/shared';
 import {
-  type OptionValueType, type OptionProps, OptionInstance, OptionClickCallbackParams,
+  type OptionValueType, type OptionProps, OptionClickCallbackParams,
+  OptionSlots,
 } from '../../option/src/index';
 import type Options from './options.vue';
 
@@ -74,17 +75,13 @@ export interface OptionsExpose {
 }
 
 /** 列表选项组件的插槽信息 */
-export interface OptionsSlots {
-  default?: () => OptionInstance[]
-}
+export type OptionsSlots = OptionSlots;
 
 /** 上下文，通过provide()提供给子组件 */
 export interface OptionsContext {
   props: OptionsProps,
   /** 被选中的值链列表，包含被所有选中的子选项的所在链组成的集合 */
   checkedChainList: OptionsProps['modelValue'][],
-  /** 是否为slot渲染选项 */
-  isSlot: boolean,
   /** 选中事件处理函数 */
   clickHandle: (params: OptionClickCallbackParams) => void
 }

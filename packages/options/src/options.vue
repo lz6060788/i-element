@@ -1,3 +1,11 @@
+<!--
+ * @Author: 912525302@qq.com 912525302@qq.com
+ * @Date: 2025-01-22 15:07:35
+ * @LastEditors: 912525302@qq.com 912525302@qq.com
+ * @LastEditTime: 2025-09-25 16:04:12
+ * @FilePath: \i-element\packages\options\src\options.vue
+ * @Description: 这是默认设置,请设置`customMade`, 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
+-->
 <template>
   <div
     :class="[
@@ -9,19 +17,40 @@
         ns.b('wrapper')
       ]"
     >
-      <template v-if="slots.default">
-        <div>
-          <slot />
-        </div>
-      </template>
-      <template v-else>
-        <i-option
-          v-for="item in _optionList"
-          :key="item.value.toString()"
-          v-bind="item"
-          @click="clickHandle"
-        />
-      </template>
+      <i-option
+        v-for="item in _optionList"
+        :key="item.value.toString()"
+        v-bind="item"
+        @click="clickHandle"
+      >
+        <template
+          v-if="slots.prefix"
+          #prefix="{ context, checked }"
+        >
+          <slot
+            :context="context"
+            :checked="checked"
+          />
+        </template>
+        <template
+          v-if="slots.default"
+          #default="{ context, checked }"
+        >
+          <slot
+            :context="context"
+            :checked="checked"
+          />
+        </template>
+        <template
+          v-if="slots.suffix"
+          #suffix="{ context, checked }"
+        >
+          <slot
+            :context="context"
+            :checked="checked"
+          />
+        </template>
+      </i-option>
     </div>
   </div>
 </template>
@@ -35,9 +64,9 @@ import {
 import {
   defaultOptionsProps,
   OptionsProps,
-  OptionsSlots,
   OptionsEmits,
   OptionsContext,
+  OptionsSlots,
 } from './props';
 import { OptionsKey } from './constant';
 import { generateOptionList } from './utils';
@@ -100,7 +129,6 @@ provide(
   reactive({
     props,
     checkedChainList: _checkedChainList,
-    isSlot: !!slots.default,
     clickHandle,
   }) as unknown as OptionsContext,
 );

@@ -22,6 +22,7 @@
           ns.b('prefix')
         ]"
       >
+        <!-- 这里需要改为自行实现的checkbox -->
         <input
           v-if="_showCheckBox"
           type="checkbox"
@@ -30,6 +31,7 @@
         <slot
           v-if="slots.prefix"
           :checked="_checked"
+          :context="props"
           name="prefix"
         />
       </div>
@@ -41,6 +43,7 @@
         <slot
           v-if="slots.default"
           :checked="_checked"
+          :context="props"
         />
         <span v-else>{{ props.label || props.value?.toString() }}</span>
       </div>
@@ -52,6 +55,7 @@
         <slot
           v-if="slots.suffix"
           :checked="_checked"
+          :context="props"
           name="suffix"
         />
         <template v-else-if="_suffix">
@@ -95,16 +99,44 @@
             v-bind="item"
             :is-root="false"
             @click="subOptionclickHandle"
-          />
+          >
+            <template
+              v-if="slots.prefix"
+              #prefix="{ context, checked }"
+            >
+              <slot
+                :context="context"
+                :checked="checked"
+              />
+            </template>
+            <template
+              v-if="slots.default"
+              #default="{ context, checked }"
+            >
+              <slot
+                :context="context"
+                :checked="checked"
+              />
+            </template>
+            <template
+              v-if="slots.suffix"
+              #suffix="{ context, checked }"
+            >
+              <slot
+                :context="context"
+                :checked="checked"
+              />
+            </template>
+          </i-option>
         </ul>
       </template>
     </i-popper>
     <i-popper
-      v-else-if="_tooltip"
+      v-if="_tooltip"
       ref="tooltipPopperRef"
       :content="_tooltip"
       placement="right-start"
-      offset-distance="0"
+      offset-distance="1px"
       :hover="false"
       :target-element="optionRef"
       :style="tooltipPopperStyle"
@@ -138,7 +170,7 @@ const props = withDefaults(
   defaultOptionProps(),
 );
 const _optionsContext = inject(OptionsKey, {
-  props: { modelValue: '' }, checkedChainList: [], isSlot: false, clickHandle: () => {},
+  props: { modelValue: '' }, checkedChainList: [], clickHandle: () => {},
 });
 
 const _disabled = computed(() => !!props.disabled);
@@ -150,20 +182,11 @@ const _tooltip = computed(() => props.tooltip);
 const _children = computed(() => props.children);
 const _closeAfterClick = computed(() => _optionsContext.props.closeAfterClick ?? props.closeAfterClick);
 const _style = computed(() => `width: ${_optionsContext.props.width ?? props.width}px; min-width: ${_optionsContext.props.minwidth ?? props.minwidth}px`);
-const _isRoot = computed(() => props.isRoot);
 
 const ns = useNamespace('option');
 
 function clickHandle() {
-  // 插槽形式渲染且为根选项，调用options注入的click函数
-  if (_optionsContext.isSlot && _isRoot.value) {
-    _optionsContext?.clickHandle({
-      value: props.value,
-      checked: !_checked.value,
-      valueChain: [props.value],
-    });
-  }
-  // 非子节点不想上冒泡点击事件
+  // 非子节点不向上冒泡点击事件
   if (!_children.value?.length) {
     if (_closeAfterClick.value) {
       popperClose();
@@ -178,14 +201,6 @@ function clickHandle() {
 function subOptionclickHandle(params: OptionClickCallbackParams) {
   if (_closeAfterClick.value) {
     popperClose();
-  }
-  // 子选项冒泡到根选项后，若为插槽形式渲染，则调用options注入的click函数
-  if (_optionsContext.isSlot && _isRoot.value) {
-    _optionsContext?.clickHandle({
-      value: params.value,
-      checked: params.checked,
-      valueChain: [props.value, ...params.valueChain],
-    });
   }
   emit('click', {
     value: params.value,

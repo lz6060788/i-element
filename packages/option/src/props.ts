@@ -127,9 +127,9 @@ export interface OptionExpose {
 /** 选项组件的插槽信息 */
 export interface OptionSlots {
   /** 默认显示的内容，相当于label属性 */
-  default?: (props: { checked: boolean }) => any;
-  prefix?: (props: { checked: boolean }) => any;
-  suffix?: (props: { checked: boolean }) => any;
+  default?: (props: { checked: boolean, context: OptionProps }) => any;
+  prefix?: (props: { checked: boolean, context: OptionProps }) => any;
+  suffix?: (props: { checked: boolean, context: OptionProps }) => any;
 }
 
 export type OptionInstance = InstanceType<typeof Option>;
